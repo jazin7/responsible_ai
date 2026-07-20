@@ -1,56 +1,89 @@
-\documentclass[11pt]{article}
+\documentclass{article}
+
+\usepackage[final]{neurips_2019}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{times}
-\usepackage[textwidth=5.5in,textheight=9in]{geometry}
-\usepackage{graphicx}
-\usepackage{booktabs}
-\usepackage{float}
-\usepackage{amsmath,amsfonts}
-\usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{lipsum}
 
+\newcommand{\note}[1]{\textcolor{blue}{{#1}}}
 
-\newcommand{\note}[1]{\textcolor{blue}{#1}}
-
-\title{\vspace{-1em}\textbf{Trustworthiness of Models based on Language}\\
+\title{
+  Accuracy of LLM on literature based language  \\
   \vspace{1em}
-  \normalsize{\normalfont Responsible AI Project Report}}
-
-\author{
-  Hannah Buch \quad Yassine Ajoud\\
+  \small{\normalfont Responsible AI Project Report}  % Select one and delete the other
 }
 
-\date{}
+\author{
+  Name \\
+  Hannah Buch \\
+  \AND
+  Name\\
+  Yassine Ajoud
+  % Examples of more authors
+%   \And
+%   Name \\
+%   Department of Computer Science \\
+%   Stanford University \\
+%   \texttt{name@stanford.edu} \\
+%   \And
+%   Name \\
+%   Department of Computer Science \\
+%   Stanford University \\
+%   \texttt{name@stanford.edu}
+}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-  -
+This report describes the development of an evaluation framework to assess the capability of LLMs (especially Qwen) to perform literature analysis and recognization, combined with reasoning, across multiple languages. For testing the data, from a well known and well trained source literature was taken from Project Gutenberg. The program evaluates the model's capacity to process text snippets and accurately identify the corresponding book from a set of random possible titles. 
+Analyzed were english, german, french, dutch and italian literature and cross-lingual test between german and english, where german texts were matched to english titles, checking the models capability of applying translated texts. The question datasets were automatically created by using text processing for the header each book in Project Gutenberg has. 
+Additionaly the model's reasoning capabilities were tested, were we manually analyzed the models reasons for choosing certain titles. The checking of the model results were also done automatically, via regex. 
+At last we corrupted the text data, by introducing noise into them, and testing the models robustness. All of our evaluations are visualized in graphics, showing our results. 
 \end{abstract}
 
 \section{Introduction}
+
 -
 \section{Related Work}
 -
 \section{Approach}
--
+
+
 \section{Experiments}
--
+
+
 \subsection{Results}
--
+
+
 \section{Analysis}
 
+
 \section{Conclusion}
--
+
+
 \section*{Author contribution statement}
--
+
+
 \section*{GenAI use}
--
-% \section*{References}
-% references will be added here
+
+\bibliographystyle{acl_natbib}
+\bibliography{references}
+
+\appendix
+
+\section{Appendix}
+
 
 \end{document}
+
