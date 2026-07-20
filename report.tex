@@ -58,7 +58,8 @@ At last we corrupted the text data, by introducing noise into them, and testing 
 \section{Related Work}
 -
 \section{Approach}
-
+\subsection{Database}
+For the database, we searched through Hugging Face for appropriate literature databases to use. First we wanted to use nikolina-p/gutenberg\_clean\_en\_splits\footnote{https://huggingface.co/datasets/nikolina-p/gutenberg\_clean\_en\_splits}, because the dataset had only books in english already and it had stripped all headers of the books. At first this seemed like a good approach to make sure the model would only be asked about actual text parts, and not accidentally some part of the header which did not contribute to the book itself. Unfortunatly the books in this database were only identifiable by the numbers anymore as title and similar things were contained in the header. That is why we switched to manu/project\_gutenberg\footnote{https://huggingface.co/datasets/manu/project_gutenberg/viewer/default/en}, which was the original database used by nikolina-p/gutenberg\_clean\_en\_splits. 
 
 \section{Experiments}
 
