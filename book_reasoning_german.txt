@@ -1,0 +1,140 @@
+--- Question 1/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    ferdinand lassalle eine würdigung des lehrers und kämpfers
+Explanation:     The text snippet discusses concepts related to bourgeois revolution, modern state systems, and taxation, which are themes found in Ferdinand Lassalle's works. The specific mention of Lassalle and his theories about the bourgeois state and indirect taxation clearly indicates that this excerpt is from "Ferdinand Lassalle: Eine Würdigung des Lehrers und Kampfers," making option A the correct choice.
+----------------------------------------
+
+--- Question 2/20 ---
+Model Answer:    C
+Correct Answer:  D
+Actual Title:    das stunden-buch
+Explanation:     The text snippet is from "Die Stufe - Fragment einer Liebe" by Gerhart Hauptmann. It reflects the themes of transformation and rebirth, as well as the imagery of nature and society regaining its natural state, which are characteristic of Hauptmann's work.
+----------------------------------------
+
+--- Question 3/20 ---
+Model Answer:    C
+Correct Answer:  A
+Actual Title:    die stufe fragment einer liebe
+Explanation:     The text snippet is from "Faust: Der Tragödie Erster Teil" by Johann Wolfgang von Goethe. It contains characteristic German Romantic language and themes that are typical of Goethe's work, such as the discussion of art, beauty, and nature. The mention of Spitzbergen and the overall poetic style align with Faust's philosophical musings.
+----------------------------------------
+
+--- Question 4/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    menschliches, allzumenschliches
+Explanation:     The text snippet is from "Menschliches, Allzumenschliches" (Human, All Too Human) by Friedrich Nietzsche. It discusses the transition from a more harmonious and traditional artistic approach to the modern restless and revolutionary spirit of the time. This philosophical work fits the content and style of the given passage.
+----------------------------------------
+
+--- Question 5/20 ---
+Model Answer:    D
+Correct Answer:  C
+Actual Title:    märchen-almanach auf das jahr 1828
+Explanation:     The text snippet is from "Das Schönste" by Max Dauthendey, a German author known for his adventure stories. The passage describes a scene of combat involving swords and a character named Said fighting against robbers, which fits the adventurous and heroic tone typical of Dauthendey's works.
+----------------------------------------
+
+--- Question 6/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    mr honey's banking dictionary (english-german)
+Explanation:     The text snippet appears to be a list of legal terms translated from English to German, making it most likely part of a bilingual dictionary focused on legal terminology. Option A, "mr honey's banking dictionary (english-german)," fits this description as it is a bilingual dictionary and includes various legal terms related to law and legal procedures.
+----------------------------------------
+
+--- Question 7/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    geschichte von england seit der thronbesteigung jakob's des zweiten. siebenter band: enthaltend kapitel 13 und 14.
+Explanation:     The text snippet is from "Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Siebenter Band: Enthaltend Kapitel 13 und 14." This can be inferred from the footnote references and the content discussing historical events in Scotland during the late 17th century, including mentions of Sir Ewan Cameron, the Siege of the Castle of Edinburgh, and parliamentary acts.
+----------------------------------------
+
+--- Question 8/20 ---
+Model Answer:    A
+Correct Answer:  B
+Actual Title:    kater martinchen
+Explanation:     The text snippet is from "das stunden-buch," a collection of fairy tales and folk stories. It mentions characters and elements typical of German folklore, such as the Matthes Pagels and his tree, and introduces the Rattenkönig Birlibi, which are part of the stories in this book.
+----------------------------------------
+
+--- Question 9/20 ---
+Model Answer:    C
+Correct Answer:  D
+Actual Title:    der gastfreund
+Explanation:     The text snippet is in German and appears to be from a play about Medea, a character from Greek mythology. The dialogue includes references to Peronto, Aietes, and mentions of Delphi and Colchis, which are locations from Greek mythology. This content aligns with the study of Greek antiquity, making "griechische altertumskunde" (Greek antiquity) the most appropriate choice among the given options.
+----------------------------------------
+
+--- Question 10/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    cuba
+Explanation:     The text snippet describes the mangrove swamps and wetlands of Cuba, specifically mentioning the region from Manzanillo to Tunas. It discusses the wildlife and the unsuitability of the area for settlement by agricultural people. This content is characteristic of travelogues or geographical descriptions, fitting well with "Cuba" as one of the options provided.
+----------------------------------------
+
+--- Question 11/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    weltreise erster teil: indien, china und japan
+Explanation:     The text snippet describes the approach to Hong Kong and mentions geographical features such as islands, cliffs, and the Pearl River. This content aligns with a travelogue or guidebook about traveling to China, specifically focusing on the region around Hong Kong. "Weltreise Erster Teil: Indien, China Und Japan" (First Part of World Travel: India, China, and Japan) fits this description as it would contain detailed information about various locations in these countries.
+----------------------------------------
+
+--- Question 12/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    ... und hätte der liebe nicht weihnächtliche geschichten
+Explanation:     The text snippet is in German and discusses a woman named Frau Heilemann who promises to come back to visit Laura and her family. She mentions giving gifts to the child on Christmas Eve, which is a common theme in Christmas stories. This content aligns with option B, "... und hätte der liebe nicht weihnächtliche geschichten," which translates to "And if love had not written Christmas stories." This title suggests a collection of Christmas-themed stories, making it the most likely source for the given text.
+----------------------------------------
+
+--- Question 13/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    griechische altertumskunde
+Explanation:     The text snippet is in German and discusses ancient Greek naval history, mentioning locations such as Akte, Munychia, and the Peiraieus. This content aligns with the study of Greek antiquity, making "griechische altertumskunde" (Greek Antiquities) the most appropriate choice among the given options.
+----------------------------------------
+
+--- Question 14/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    faust: der tragödie erster teil
+Explanation:     The text snippet is clearly from "Faust: Der Tragödie Erster Teil" by Johann Wolfgang von Goethe. It includes dialogue between characters such as Faust, Mephistopheles, and the Witch, which are central to the narrative of this famous German literary work.
+----------------------------------------
+
+--- Question 15/20 ---
+Model Answer:    C
+Correct Answer:  A
+Actual Title:    boccaccio
+Explanation:     The text snippet is from "Das Stunden-Buch," a collection of novellas that reflect real-life situations and human experiences. It discusses the natural order of life and societal norms, which aligns with the themes found in "Das Stunden-Buch" by Johann Peter Hebel.
+----------------------------------------
+
+--- Question 16/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    das schönste von max dauthendey
+Explanation:     The text snippet is from "das schönste" by Max Dauthendey. It describes a character who has become aware of the continuous cycle of murder and the presence of all murderers throughout history, indicating a dark and psychological narrative typical of Dauthendey's works.
+----------------------------------------
+
+--- Question 17/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    die entstehung der kontinente und ozeane
+Explanation:     The text snippet discusses geological formations and their alignment, suggesting it is from "Die Entstehung der Kontinente und Ozeane" by Alfred Wegener, where he presents evidence for continental drift theory.
+----------------------------------------
+
+--- Question 18/20 ---
+Model Answer:    A
+Correct Answer:  D
+Actual Title:    der kriegsfreiwillige
+Explanation:     The text snippet is from "das schönste von max dauthendey," a German children's novel. It describes a scene in a church service where the congregation prays for freedom and celebrates after the service with their children, who have been away. The style and content are characteristic of the narrative and themes found in this particular book.
+----------------------------------------
+
+--- Question 19/20 ---
+Model Answer:    D
+Correct Answer:  C
+Actual Title:    a book of german lyrics
+Explanation:     This text snippet discusses the life and works of Friedrich Schiller, a prominent German poet and playwright. It mentions his career progression and his struggles with health, which aligns with the biographical nature of "Der Gastfreund" (The Guest-Friend), a novel by Theodor Fontane that includes biographical elements about its characters.
+----------------------------------------
+
+--- Question 20/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    polnische gedichte
+Explanation:     The text snippet is in German and discusses themes related to Polish identity, borders, and the relationship between different ethnic groups. Given the content and language, it is most likely from a collection of Polish poetry (Polnische Gedichte), making option D the correct choice.
+----------------------------------------
+

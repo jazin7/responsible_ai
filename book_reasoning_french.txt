@@ -1,0 +1,140 @@
+--- Question 1/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    journal des goncourt (deuxième série, premier volume) mémoires de la vie littéraire
+Explanation:     This text snippet is from "Journal des Goncourt (Deuxième Série, Premier Volume) Mémoires de la Vie Littéraire." The style and content, including the detailed descriptions of war scenes and the mention of specific locations like Meudon and the Étoile barrier, are characteristic of the Goncourt brothers' writing during the Franco-Prussian War period.
+----------------------------------------
+
+--- Question 2/20 ---
+Model Answer:    C
+Correct Answer:  B
+Actual Title:    l'école des indifférents
+Explanation:     The text snippet is from "Geneviève" by Honoré de Balzac. It describes a scene where a character is introduced to Manuel, who holds a title in Tacna, a city in South America. The style and content are characteristic of Balzac's work, particularly his focus on social commentary and character development within a specific setting.
+----------------------------------------
+
+--- Question 3/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    sodome et gomorrhe--volume 1
+Explanation:     This text snippet is from "Sodome et Gomorrhe--Volume 1," a novel by Marcel Proust. The style and content, particularly the detailed and introspective narrative about social interactions and relationships, are characteristic of Proust's work.
+----------------------------------------
+
+--- Question 4/20 ---
+Model Answer:    B
+Correct Answer:  A
+Actual Title:    geneviève
+Explanation:     This text snippet is from "Sodome et Gomorrhe--Volume 1," a novel by François-René de Chateaubriand, later expanded and reworked by Honoré de Balzac. The dialogue and characters mentioned are consistent with the narrative style and content of this work.
+----------------------------------------
+
+--- Question 5/20 ---
+Model Answer:    C
+Correct Answer:  B
+Actual Title:    visages
+Explanation:     The text snippet is from "Oeuvres de Marcel Schwob, volume 1 of 2." It discusses the relationship between a writer and his audience, mentioning historical figures and events such as the French Revolution of 1793, the execution of the duc d'Enghien, and the Bonaparte regime. The style and content are characteristic of Marcel Schwob's literary works, which often blend history, fantasy, and personal reflections.
+----------------------------------------
+
+--- Question 6/20 ---
+Model Answer:    B
+Correct Answer:  D
+Actual Title:    jean sbogar
+Explanation:     This text snippet is from "Sodome et Gomorrhe--Volume 1" by François Rabelais. The passage discusses themes of love, despair, and religious devotion, which are characteristic of Rabelais's work. The mention of characters like Lothario and Antonia, along with the overall style and content, clearly indicate this book.
+----------------------------------------
+
+--- Question 7/20 ---
+Model Answer:    B
+Correct Answer:  A
+Actual Title:    midi à quatorze heures histoire d'un voisin--voyage dans paris--une visite à l'arsenal--un homme et une femme
+Explanation:     This text snippet is from "Cœur de pirate" (Heart of a Pirate in English), which is a novel by Alexandre Dumas. The passage discusses social class and fashion in 19th-century France, reflecting themes common in Dumas's works.
+----------------------------------------
+
+--- Question 8/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    cent-vingt jours de service actif
+Explanation:     The text snippet is in French and discusses military details, including a company's composition and its departure from a fort. This content aligns with the style and subject matter found in "Cent-Vingt Jours de Service Actif," a book that documents the experiences of Canadian soldiers during their service.
+----------------------------------------
+
+--- Question 9/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    correspondance, vol. 5, 1812-1876
+Explanation:     The text snippet is from "Correspondance, Vol. 5, 1812-1876" by George Sand. This can be deduced from the signature at the end of the letter, "Nohant, 29 juillet 1867," and the style of writing, which is characteristic of George Sand's correspondence.
+----------------------------------------
+
+--- Question 10/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    cours de philosophie positive. (3/6)
+Explanation:     This text snippet is from "Cours de Philosophie Positive" by Auguste Comte. The style and content, discussing the limitations of biological sciences compared to other branches of philosophy, are characteristic of Comte's work.
+----------------------------------------
+
+--- Question 11/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    l'illustration, no. 3255, 15 juillet 1905
+Explanation:     The text snippet is from an issue of "L'Illustration," a French illustrated newspaper, dated July 15, 1905. It discusses the disaster of the submarine "Farfadet" and includes several illustrations and notes about literary works, indicating it is part of the magazine's content rather than a standalone book.
+----------------------------------------
+
+--- Question 12/20 ---
+Model Answer:    A
+Correct Answer:  D
+Actual Title:    les quarante-cinq  tome 3
+Explanation:     The text snippet is from "L'Assommoir" by Émile Zola. It describes the character Aurilly's actions and thoughts as he tries to eavesdrop on others while walking through a street. The style and content are consistent with Zola's naturalistic literary approach, which focuses on the gritty realities of working-class life in late 19th-century France.
+----------------------------------------
+
+--- Question 13/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    cœur-de-panthère
+Explanation:     The text snippet is from "Cœur-de-Panthère" by Pierre Loti. It describes a scene where Jack returns safely to Fort Laramie and the preparations for an expedition to avenge the "Heroine of Fort Laramie." The mention of specific military details and the context of the story align with the narrative style and content of this novel.
+----------------------------------------
+
+--- Question 14/20 ---
+Model Answer:    B
+Correct Answer:  C
+Actual Title:    contes rapides
+Explanation:     This text snippet is from "Les Quarante-Cinq" by Honoré de Balzac, specifically from the third volume. The passage describes a relationship between a teacher and her student, Marius, and their correspondence through letters filled with romantic sentiments. Balzac's work often delves into the complexities of human relationships and societal norms, which aligns with the content of this excerpt.
+----------------------------------------
+
+--- Question 15/20 ---
+Model Answer:    B
+Correct Answer:  D
+Actual Title:    la clique dorée
+Explanation:     The text snippet is from "Sodome et Gomorrhe--Volume 1," a novel by François-René de Chateaubriand. It describes the thoughts and possessions of a character named Mlle de la Ville-Handry, who is in a difficult situation and is assessing her resources. This context and style are characteristic of Chateaubriand's work.
+----------------------------------------
+
+--- Question 16/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    mémoires du maréchal marmont, duc de raguse (1/9)
+Explanation:     The text snippet is from "Mémoires du maréchal Marmont, duc de Raguse," which is a historical memoir written by Marshal Louis-Nicolas Davout, Duke of Ragusa. The content discusses military strategies and actions during a campaign, which aligns with the style and subject matter of this memoir.
+----------------------------------------
+
+--- Question 17/20 ---
+Model Answer:    C
+Correct Answer:  B
+Actual Title:    a propos de l'assommoir
+Explanation:     This text snippet is from "L'Illustration," No. 3255, dated 15 July 1905. It discusses a writer named M. Ulbach and his works, providing critical analysis typical of journalistic reviews during that period. The style and content suggest it is a review or commentary piece from a French newspaper or magazine.
+----------------------------------------
+
+--- Question 18/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    histoire du canal de suez
+Explanation:     The text snippet discusses the formation of the Suez Canal Company and includes phrases like "Compagnie," "Conseil d’administration," and "territoires," indicating it is from "Histoire du canal de Suez."
+----------------------------------------
+
+--- Question 19/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    oeuvres complètes de gustave flaubert, tome 4
+Explanation:     The text snippet is from "Œuvres complètes de Gustave Flaubert, tome 4," which contains the short story "Un Coeur simple." The dialogue and characters mentioned, such as Martinon and M. Dambreuse, along with the political references to the French Revolution and various political figures, are characteristic of Flaubert's style and content.
+----------------------------------------
+
+--- Question 20/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    oeuvres de marcel schwob volume 1 of 2
+Explanation:     The text snippet is from "Oeuvres de Marcel Schwob, Volume 1 of 2." It contains French literary content with references to characters and themes that are characteristic of Marcel Schwob's works, including religious and allegorical elements.
+----------------------------------------
+

@@ -1,0 +1,140 @@
+--- Question 1/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    addison
+Explanation:     The text snippet is discussing events related to Joseph Addison's work, specifically mentioning his involvement with the publication "The Tatler." This is evident from references to Mr. Nichols' notes to the _Tatler_ and Steele's papers in the same publication. Therefore, the book this snippet belongs to is "Addison."
+----------------------------------------
+
+--- Question 2/20 ---
+Model Answer:    D
+Correct Answer:  B
+Actual Title:    the reverberator
+Explanation:     The text snippet is from "A City Schoolgirl and Her Friends" by Edith Wharton. This can be deduced from the dialogue and the context, which reflects the characters' discussions about marriage preferences and national stereotypes, typical themes in Wharton's works.
+----------------------------------------
+
+--- Question 3/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    the brothers-in-law: a tale of the equatorial islands; and the brass gun of the buccaneers 1901
+Explanation:     This text snippet is from "The Brothers-in-Law: A Tale of the Equatorial Islands; and the Brass Gun of the Buccaneers" published in 1901. The narrative context, characters' names (Challoner, Dawson), and the setting (Jakoits district) are indicative of this specific novel.
+----------------------------------------
+
+--- Question 4/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    true stories of the great war volume ii tales of adventure-heroic deeds-exploits told by the soldiers, officers, nurses, diplomats, eye witnesses
+Explanation:     This text snippet describes military fortifications and weaponry in Tsingtao (now Qingdao), China, during World War I. It details specific types and numbers of guns at various forts and mentions the German garrison's actions upon surrender. This content aligns with the style and subject matter found in "True Stories of the Great War Volume II Tales of Adventure-Heroic Deeds-Exploits Told by the Soldiers, Officers, Nurses, Diplomats, Eye Witnesses," which focuses on recounting real events and experiences from the war.
+----------------------------------------
+
+--- Question 5/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    marriage
+Explanation:     The text snippet is from "The Ambassadors" by Henry James. It discusses the intellectual and moral qualities of the Popes and contrasts them with the atmosphere of high direction provided by another figure (likely meant to be Mrs. Newsome). This context and style are characteristic of James' work, specifically "The Ambassadors," which is known for its complex character studies and philosophical discussions.
+----------------------------------------
+
+--- Question 6/20 ---
+Model Answer:    B
+Correct Answer:  D
+Actual Title:    the congo rovers a story of the slave squadron
+Explanation:     The text snippet is from "Carried Off: A Story of Pirate Times" by Captain W.H.G. Kingston. It discusses a character's plans to explore the neighborhood and find a navigable creek after learning about a seaman named Madera. This context and style are characteristic of Kingston's adventure stories from the 19th century.
+----------------------------------------
+
+--- Question 7/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    the buddha a drama in five acts and four interludes
+Explanation:     The text snippet describes a scene from a play about the Buddha, mentioning characters like Anatha Pindika and Prince Jeta, and refers to the Jetavana, a well-known monastery associated with the Buddha. The mention of "ACT III" and "FIRST SCENE" further indicates it is from a dramatic work, making "The Buddha, a Drama in Five Acts and Four Interludes" the correct choice.
+----------------------------------------
+
+--- Question 8/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    on the origin and metamorphoses of insects
+Explanation:     The text snippet discusses theories of evolution and embryonic states, which are central themes in works related to natural science and biology. The specific mention of Quatrefages, Herbert Spencer, and Johannes Müller, along with the discussion of insect metamorphosis, strongly indicates that this excerpt is from "On the Origin and Metamorphoses of Insects" by Jean-Henri Fabre, making option C the correct choice.
+----------------------------------------
+
+--- Question 9/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    dick merriwell's assurance in his brother's footsteps
+Explanation:     This text snippet is from "Dick Merriwell's Assurance in His Brother's Footsteps," which is part of the Dick Merriwell series. The dialogue and context suggest a baseball game, with characters discussing hits and the pitcher's name mentioned as Jack Ware. This aligns with the sports-themed content typical of the Dick Merriwell series.
+----------------------------------------
+
+--- Question 10/20 ---
+Model Answer:    D
+Correct Answer:  B
+Actual Title:    harper's round table, october 13, 1896
+Explanation:     The text snippet is from "Rip Van Winkle" by Washington Irving, which is not listed among the options provided. However, based on the style and content, it does not match any of the given choices (A, B, C, or D). The correct answer cannot be determined from the provided options, but if forced to choose, option D seems the least likely as it suggests a book about marriage, which does not align with the western-themed dialogue and setting of the snippet.
+----------------------------------------
+
+--- Question 11/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    what cheer or roger williams in banishment, a poem
+Explanation:     This text snippet is from "What Cheer? Or Roger Williams in Banishment: A Poem" by John Greenleaf Whittier. The poem describes the scenery and atmosphere experienced by the settlers, particularly focusing on the natural surroundings and the presence of Native Americans, which aligns with the content of the given excerpt.
+----------------------------------------
+
+--- Question 12/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    our day in the light of prophecy
+Explanation:     The text snippet discusses historical and prophetic references related to kingdoms and empires, particularly focusing on the Roman Empire. It includes quotes from ancient texts such as Polybius and Horace, which are consistent with the content of books that explore historical and prophetic themes. This aligns most closely with "our day in the light of prophecy," which likely examines historical events through a prophetic lens.
+----------------------------------------
+
+--- Question 13/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    the go ahead boys in the island camp
+Explanation:     This text snippet is from "The Go Ahead Boys in the Island Camp." It describes activities and practices typical of the Go Ahead Boys series, including the tilting match and the boys' discussion about their previous encounter with skunks. The context and style are consistent with this particular book in the series.
+----------------------------------------
+
+--- Question 14/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    a city schoolgirl and her friends
+Explanation:     The text snippet is from "A Little Princess" by Frances Hodgson Burnett. The characters mentioned, such as Amy, Stella, and Mrs. Morrison, along with the context of new furniture and housekeeping, are typical of the story's setting and plot.
+----------------------------------------
+
+--- Question 15/20 ---
+Model Answer:    D
+Correct Answer:  A
+Actual Title:    the uphill climb
+Explanation:     The text snippet is from "The Bab Ballads with which are included Songs of a Savoyard" by Rudyard Kipling. The passage describes a character named Ford who is struggling with self-doubt and a sense of failure, and it mentions Mason, indicating a relationship between the two characters. The style and content are consistent with Kipling's work, particularly his narrative poetry and stories.
+----------------------------------------
+
+--- Question 16/20 ---
+Model Answer:    C
+Correct Answer:  B
+Actual Title:    the treasure of heaven a romance of riches
+Explanation:     The text snippet describes a coastal scene with white foam-roses and the sea, indicating a setting near the ocean. It also mentions a character named Helmsley who enjoys walking to the edge of the sea and getting to know the local people, suggesting a narrative focused on a newcomer in a small community. This style and content align closely with Harper's Round Table, a periodical that published fiction and essays, making option C the most likely source.
+----------------------------------------
+
+--- Question 17/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    the birth and babyhood of the telephone
+Explanation:     The text snippet discusses early telephone pioneer Alexander Graham Bell's experiences performing at lectures, specifically mentioning his performance with "Hold the Fort" and his interaction with Thomas Edison. This content aligns with the historical account of Bell's life and work, making "the birth and babyhood of the telephone" (option C) the most appropriate book for this snippet.
+----------------------------------------
+
+--- Question 18/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    the bab ballads with which are included songs of a savoyard
+Explanation:     The text snippet is from "The Bab Ballads with Which Are Included Songs of a Savoyard" by Rudyard Kipling. It includes characteristic verses and themes typical of Kipling's work, such as the playful and whimsical tone, references to nature and rural settings, and the inclusion of made-up words and rhymes.
+----------------------------------------
+
+--- Question 19/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    visual illusions their causes, characteristics and applications
+Explanation:     This text snippet discusses color vision, color sensations, and visual effects, which are topics typically covered in a book on visual perception or illusions. The mention of a Mason (black and white) disk and an experiment involving moving colored patterns under low illumination suggests a focus on visual phenomena and their explanations, fitting well with "Visual Illusions: Their Causes, Characteristics and Applications."
+----------------------------------------
+
+--- Question 20/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    carried off a story of pirate times
+Explanation:     The text snippet describes a scene involving pirates and a character named Carlo who is being taken to the Captain's cabin. This setting and plot are characteristic of adventure stories set during the golden age of piracy, which fits with option C, "carried off a story of pirate times."
+----------------------------------------
+
