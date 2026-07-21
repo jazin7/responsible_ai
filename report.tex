@@ -52,9 +52,24 @@ Additionaly the model's reasoning capabilities were tested, were we manually ana
 At last we corrupted the text data, by introducing noise into them, and testing the models robustness. All of our evaluations are visualized in graphics, showing our results. 
 \end{abstract}
 
-\section{Introduction}
 
--
+\section{Introduction}
+The rise of Artificial Intelligence in the last years, saw especially a big development in LLMs, Large Language models. Models who were trained on large chunks of text, and capable of reproducing text, based on this trainings data. Large language models answer questions in many languages, yet most of their training data is in English. The training data mainly stems from the internet, making it in large parts english and european centric. It is therefore reasonable to ask whether they perform as well in other languages as they do in English. The question
+matters regarding trust and fairness. A model should be usable for all types of users, including those with different linguistic backgrounds. When a user in Germany addresses the model in German, they would not be able to notice whether the output has a better or worse quality than in other languages. 
+
+The suggested course project approach was to take an existing benchmark, translate it with a chatbot and compare the scores before and after. During the project, we departed from this plan. While we stayed within the realm of assessing literature knowledge of LLMs, we shifted the focus.  
+While machine translations often count as reliable, at least when done on well-trained languages, this mostly extends to a translation in a more technical way; the translation will probably carry the correct meaning, but it will lack the same style and artistic approach. Human book translations are well known for translating more the style of the book than the single words. So for us, the question became: how well can an LLM work with translations that cannot just be translated word for word back into the original? With such a base of books at our disposal, we used literature from the Gutenberg Project, where we found works from England, Germany, France, Italy, and the Netherlands. Project Gutenberg is a large online library consisting of books, which are not under any copyright, mostly due to the age of the text. It is reasonable to assume that the most current LLMs were trained on this library as it is easy to access and has most of the well-known classics in its database. 
+
+For the project we took the model through different types of tests, assessing its capabilites. The focus was to test reproducability of training data, but with some obstacles, making it more difficult. The main approach was to test the model on text parts and asking for a decision on a multiple-choice basis. A model that encountered the book during training should do this well, while a model that never saw the book can still guess from the names and places in the passage. Random guessing would yield 25\%.
+
+We ran this test with Qwen2.5-7B-Instruct on 100 books each in English,
+German, French, Italian and Dutch. On top of these five runs we carried out
+three smaller experiments. In the first, we took 23 German translations of
+English books and asked the model for the English original title. In the
+second, we replaced characters in the passages with random letters
+and observed the effect on accuracy. In the third, we required the model to
+explain its answer on smaller sets of books in English, German, and French.
+
 \section{Related Work}
 -
 \section{Approach}
