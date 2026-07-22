@@ -152,6 +152,27 @@ In the base test the model prints a single letter and nothing else. We also want
 \texttt{Provide your answer using the correct format.}
 \end{promptbox}
 
+\section{Analysis}
+\subsection{Accuracy Results}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/English_results.png} 
+    \caption{Distribution of predictions, for english literature}
+    \label{fig:english_chart}
+\end{figure}
+First we established our baseline result, seen in Figure \ref{fig:english_chart}. Our plain assumption was that the model recognizes
+literature best in English. Therefore to judge the accuracy of the model in other languages we will have to compare it to the baseline accuracy of english literature. Using english literature (originally written in the english language) and testing it for title prediction we observed a rather high accuracy of 89\%. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Languages.png} 
+    \caption{Distribution of predictions, for different language literature}
+    \label{fig:language_chart}
+\end{figure}
+
+Comparing the different languages now shows a significant difference in the models accuracy to predict titles from german, french and italian literature. Figure \ref{fig:language_chart} illustrates the zero-shot evaluation results. While none of the results appear to be especially bad, there is a visible gap between them and the english accuracy. Dutch scored higher than we expected. As Italian and Dutch are the two smallest of the datasets we chose, italian having 1010 books included and dutch 1420, this may be an interesting find of smaller booksets maybe being better stored in the models and easier to reproduce. Another possible interpretation could be that the books from this languages are more famous ones. While in Project Guttenberg all kinds of books can be saved this means that for english literature also very niche texts are stored. For less represented languages this could instead leading to only being represented by their most famous literature. 
+
+
+
 \section{Results}
 
 Table~\ref{tab:results} reports the outcome of all runs. Every base run stays
