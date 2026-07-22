@@ -19,6 +19,19 @@
 \usepackage{todonotes}
 \usepackage{minted}
 \usepackage{pdfpages}
+\usepackage{booktabs}   % For clean table lines (\toprule, \midrule, \bottomrule)
+\usepackage{csvsimple}  % For reading CSV files
+\usepackage{rotating}   % For rotating elements 90 degrees
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{csvsimple}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage{csvsimple}
+
+
+
 
 \usemintedstyle{friendly} % Options: monokai, github, friendly, vs, etc.
 \setminted{
@@ -243,5 +256,476 @@ In \textit{arXiv preprint arXiv:2210.03057}, 2022.
 \section{Appendix}
 \subsection{Appendix A: Mapping german/english titles}
 
+\begin{landscape}
+  \begingroup
+  \footnotesize                      % Decreases font size (\small, \footnotesize, or \scriptsize)
+  \setlength{\tabcolsep}{4pt}        % Reduces left/right spacing inside table cells
 
-\end{document}
+  % Total table width fits comfortably within landscape printable area (~26cm total)
+  \begin{longtable}{ p{2cm} p{6cm} p{3.8cm} p{5.2cm} p{5.5cm} }
+    
+    \toprule
+    \textbf{Gutenberg ID} & \textbf{Deutscher Titel} & \textbf{Autor} & \textbf{Erkennungsgrund} & \textbf{Originaler Englischer Titel} \\
+    \midrule
+    \endhead
+
+    \bottomrule
+    \endfoot
+
+    51378 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Siebenter Band: enthaltend Kapitel 13 und 14. & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    44238 & Das Bildnis des Dorian Gray & Oscar Wilde & Englischer Autor (Oscar Wilde) mit Übersetzer-Metadaten. & The Picture of Dorian Gray \\
+    58145 & Zwei Städte & Charles Dickens & Erkannt via Phrase: 'aus dem Englischen' & A Tale of Two Cities \\
+    30237 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Dritter Band & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    31530 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Erster Band enthaltend Kapitel 1 und 2 & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    30793 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Zweiter Band & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    36217 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten Fünfter Band (der 11) & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    47173 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Zehnter Band: enthaltend Kapitel 19 und 20. & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    62233 & Salome Tragödie in Einem Akt & Oscar Wilde & Englischer Autor (Oscar Wilde) mit Übersetzer-Metadaten. & Salome \\
+    7043 & Der Kaufmann von Venedig & William Shakespeare & Englischer Autor (William Shakespeare) mit Übersetzer-Metadaten. & The Merchant of Venice \\
+    62578 & Dhoula Bel Ein Rosenkreuzer-Roman & Paschal Beverly Randolph & Erkannt via Phrase: 'aus dem Englischen' & Ravalette \\
+    22465 & Der Weihnachtsabend Eine Geistergeschichte & Charles Dickens & Erkannt via Phrase: 'aus dem Englischen' & A Christmas Carol \\
+    30331 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Vierter Band & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    47152 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Achter Band: enthaltend Kapitel 15 und 16. & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    45956 & Tagebuch eines bösen Buben & Metta Victoria Fuller Victor & Erkannt via Phrase: 'aus dem Englischen' & A Bad Boys Diary, \\
+    65277 & Die Pest zu London & Daniel Defoe & Englischer Autor (Daniel Defoe) mit Übersetzer-Metadaten. & A Journal of the Plague Year. Beeing Observations or Memorials, Of the most Remarkable Occurrences, As well Publick as Private, which happened in London During the last Great Visitation In 1665. \\
+    47174 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Elfter Band: enthaltend Kapitel 21 und 22. & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    30165 & Die Abenteuer Tom Sawyers & Mark Twain & Englischer Autor (Mark Twain) mit Übersetzer-Metadaten. & The Adventures of Tom Sawyer \\
+    31459 & Onkel Tom's Hütte oder die Geschichte eines christlichen Sklaven. Band 1 (von 3). & Harriet Beecher Stowe & Erkannt via Phrase: 'aus dem Englischen' & Uncle Tom's Cabin \\
+    18101 & The Life of Friedrich Schiller Introduction to German Translation & Johann Wolfgang von Goethe and Thomas Carlyle & Erkannt via Phrase: 'aus dem Englischen' & The Life of Friedrich Schiller \\
+    47153 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Neunter Band: enthaltend Kapitel 17 und 18. & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+    19778 & Alice's Abenteuer im Wunderland & Lewis Carroll & Erkannt via Phrase: 'aus dem Englischen' & Alice's Adventures in Wonderland \\
+    39562 & Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Sechster Band: enthaltend Kapitel 11 und 12 & Thomas Babington Macaulay & Erkannt via Phrase: 'aus dem Englischen' & The History of England from the Accession of James II \\
+
+  \end{longtable}
+  \endgroup
+\end{landscape}
+
+\newpage
+\subsection{Appendix B: book\_reasoning\_english.txt}
+--- Question 1/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    addison
+Explanation:     The text snippet is discussing events related to the author of the Tatler, which is Joseph Addison. It mentions his interactions and writings, indicating that the source is likely one of Addison's works or a discussion about his writings. Therefore, the correct answer is A, "addison."
+----------------------------------------
+
+--- Question 2/20 ---
+Model Answer:    D
+Correct Answer:  A
+Actual Title:    the reverberator
+Explanation:     The text snippet is from "Dick Merriwell's Assurance in His Brother's Footsteps," a novel in the Dick Merriwell series. This can be inferred from the context and language used, which is characteristic of adventure and coming-of-age stories typical of this series.
+----------------------------------------
+\href{}{
+--- Question 3/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    the brothers-in-law: a tale of the equatorial islands; and the brass gun of the buccaneers 1901
+Explanation:     This text snippet is from "The Brothers-in-Law: A Tale of the Equatorial Islands; and the Brass Gun of the Buccaneers" (1901). The narrative details the interactions between traders and local inhabitants in a specific geographical setting, involving themes of trust, justice, and conflict resolution, which are characteristic of adventure and colonial-era literature from that period.
+----------------------------------------
+
+--- Question 4/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    true stories of the great war volume ii tales of adventure-heroic deeds-exploits told by the soldiers, officers, nurses, diplomats, eye witnesses
+Explanation:     This text snippet describes military fortifications and their armaments during a conflict, likely World War I, based on the mention of German and Chinese locations and the nature of the content. It fits the style and subject matter of "True Stories of the Great War Volume II Tales of Adventure-Heroic Deeds-Exploits Told by the Soldiers, Officers, Nurses, Diplomats, Eye Witnesses," which collects accounts from various participants in the war.
+----------------------------------------
+
+--- Question 5/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    marriage
+Explanation:     The text snippet discusses the search for truth and contrasts it with the intellectual and moral qualities of Popes, mentioning Silas Root and a decaying Anglicanism. This content aligns with themes found in "Marriage" by Anthony Trollope, where he explores moral and spiritual values in society.
+----------------------------------------
+
+--- Question 6/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    the congo rovers a story of the slave squadron
+Explanation:     This text snippet is from "The Congo Rovers: A Story of the Slave Squadron" by Captain Mayne Reid. The narrative style and content, including references to a ship named \_Daphne\_, exploring a neighborhood, and the involvement of a character named Madera who is a seaman, are characteristic of adventure stories set in colonial or maritime contexts, which fits with Reid's work.
+----------------------------------------
+
+--- Question 7/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    the buddha a drama in five acts and four interludes
+Explanation:     This text snippet is from "The Buddha, A Drama in Five Acts and Four Interludes" because it describes a scene involving characters like Anatha Pindika and Prince Jeta, which are associated with Buddhist stories. The mention of a royal park and the payment of gold also fits within the context of Buddhist narratives. The other options are unrelated to the content of the snippet.
+----------------------------------------
+
+--- Question 8/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    on the origin and metamorphoses of insects
+Explanation:     The text snippet discusses concepts related to evolution and embryonic states, which are central themes in works about natural history and biology. The specific mention of Quatrefages, Herbert Spencer, and Johannes Müller, along with the discussion of insect development, strongly indicates that this excerpt is from "On the Origin and Metamorphoses of Insects" by Jean-Henri Fabre.
+----------------------------------------
+
+--- Question 9/20 ---
+Model Answer:    B
+Correct Answer:  C
+Actual Title:    dick merriwell's assurance in his brother's footsteps
+Explanation:     This text snippet is from "The Go Ahead Boys in the Island Camp," which is part of the Go Ahead Boys series. The dialogue and context suggest a baseball game, with characters discussing hits and the pitcher's name mentioned (Jack Ware), indicating it is not from the other options which are related to different genres or settings.
+----------------------------------------
+
+--- Question 10/20 ---
+Model Answer:    C
+Correct Answer:  B
+Actual Title:    harper's round table, october 13, 1896
+Explanation:     The text snippet is from "The Reverberator" by George W. Cable, published in 1894. It contains dialogue and descriptions typical of American Western settings and characters, which align with the content provided.
+----------------------------------------
+
+--- Question 11/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    what cheer or roger williams in banishment, a poem
+Explanation:     This text snippet is from "What Cheer? Or Roger Williams in Banishment, a Poem" by John Greenleaf Whittier. The detailed imagery of nature, the mention of an eagle, wigwams, and the overall poetic style are characteristic of Whittier's work, particularly focusing on the setting and atmosphere of colonial America.
+----------------------------------------
+
+--- Question 12/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    our day in the light of prophecy
+Explanation:     The text snippet discusses historical and prophetic references related to kingdoms and empires, particularly focusing on the Roman Empire. It includes quotes from ancient texts such as Polybius and Horace, which are consistent with the style and content found in "Our Day in the Light of Prophecy," a book that explores historical events through a prophetic lens.
+----------------------------------------
+
+--- Question 13/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    the go ahead boys in the island camp
+Explanation:     This text snippet is from "The Go Ahead Boys in the Island Camp" by Louis R. Patten. It describes activities and practices typical of the characters in the story, such as sailing and canoe races, tilting matches, and the use of old clothes in these games. The context and language are consistent with the adventures and competitions described in this book.
+----------------------------------------
+
+--- Question 14/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    a city schoolgirl and her friends
+Explanation:     The text snippet is from "A City Schoolgirl and Her Friends" by Kate Douglas Wiggin. This can be inferred from the mention of "Lomore," which is a place name in the story, and the characters' discussion about housekeeping and managing a household, which aligns with the theme of young women adjusting to life away from the city.
+----------------------------------------
+
+--- Question 15/20 ---
+Model Answer:    D
+Correct Answer:  B
+Actual Title:    the uphill climb
+Explanation:     The text snippet is from "Marriage" by Frank Norris, a novel that explores themes of personal struggle, moral failure, and the consequences of one's actions. The passage describes the internal conflict and self-reproach of a character named Ford, highlighting his sense of betrayal and failure towards himself and another person, likely Mason.
+----------------------------------------
+
+--- Question 16/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    the treasure of heaven a romance of riches
+Explanation:     The text snippet describes a coastal setting with white foam-roses and the sea, indicating a natural and rural environment. It also mentions a character named Helmsley who enjoys walking near the sea and interacting with the local people. This description aligns with "The Treasure of Heaven: A Romance of Riches," which likely includes scenes set in a coastal village where the protagonist interacts with the locals.
+----------------------------------------
+
+--- Question 17/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    the birth and babyhood of the telephone
+Explanation:     The text snippet discusses Alexander Graham Bell's experiences during his performances and lectures, particularly focusing on his interactions with an audience in New York and his singing for demonstrations of the telephone. This content aligns with "The Birth and Babyhood of the Telephone," which chronicles the early days of the telephone and Bell's pioneering work.
+----------------------------------------
+
+--- Question 18/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    the bab ballads with which are included songs of a savoyard
+Explanation:     The text snippet is from "The Bab Ballads with Which Are Included Songs of a Savoyard" by Rudyard Kipling. This can be deduced from the style of the poetry, the inclusion of rhyming couplets, and the specific mention of "Fal lal la!" which is a refrain used in some of Kipling's works. The reference to "wopses," "beeses," and "dicky-birds" also aligns with the whimsical and playful tone typical of Kipling's work in this collection.
+----------------------------------------
+
+--- Question 19/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    visual illusions their causes, characteristics and applications
+Explanation:     This text snippet discusses color vision, color sensations, and visual illusions, which aligns with the topic of "Visual Illusions: Their Causes, Characteristics and Applications." The mention of color disks and the effects of moving colored patterns under low light conditions are typical examples used in the study of visual illusions.
+----------------------------------------
+
+--- Question 20/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    carried off a story of pirate times
+Explanation:     The text snippet describes a scene involving pirates and a character named Carlo who is being instructed to keep a secret from others. This context strongly suggests "Carried Off: A Story of Pirate Times," which fits the theme of the passage.
+----------------------------------------
+
+\newpage
+\subsection{Appendix C: book\_reasoning\_french.txt}
+--- Question 1/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    journal des goncourt (deuxième série, premier volume) mémoires de la vie littéraire
+Explanation:     This text snippet is from "Journal des Goncourt (Deuxième Série, Premier Volume) Mémoires de la Vie Littéraire." The style and content, including the detailed descriptions of war scenes and the mention of specific locations like Meudon and the Étoile barrier, are characteristic of the Goncourt brothers' writing during the Franco-Prussian War period.
+----------------------------------------
+
+--- Question 2/20 ---
+Model Answer:    C
+
+Correct Answer:  B
+Actual Title:    l'école des indifférents
+Explanation:     The text snippet is from "Geneviève" by Honoré de Balzac. It describes a scene where a character is introduced to Manuel, who holds a title in Tacna, a city in South America. The style and content are characteristic of Balzac's work, particularly his focus on social commentary and character development within a specific setting.
+----------------------------------------
+
+--- Question 3/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    sodome et gomorrhe--volume 1
+Explanation:     This text snippet is from "Sodome et Gomorrhe--Volume 1," a novel by Marcel Proust. The style and content, particularly the detailed and introspective narrative about social interactions and relationships, are characteristic of Proust's work.
+----------------------------------------
+
+--- Question 4/20 ---
+Model Answer:    B
+Correct Answer:  A
+Actual Title:    geneviève
+Explanation:     This text snippet is from "Sodome et Gomorrhe--Volume 1," a novel by François-René de Chateaubriand, later expanded and reworked by Honoré de Balzac. The dialogue and characters mentioned are consistent with the narrative style and content of this work.
+----------------------------------------
+
+--- Question 5/20 ---
+Model Answer:    C
+Correct Answer:  B
+Actual Title:    visages
+Explanation:     The text snippet is from "Oeuvres de Marcel Schwob, volume 1 of 2." It discusses the relationship between a writer and his audience, mentioning historical figures and events such as the French Revolution of 1793, the execution of the duc d'Enghien, and the Bonaparte regime. The style and content are characteristic of Marcel Schwob's literary works, which often blend history, fantasy, and personal reflections.
+----------------------------------------
+
+--- Question 6/20 ---
+Model Answer:    B
+Correct Answer:  D
+Actual Title:    jean sbogar
+Explanation:     This text snippet is from "Sodome et Gomorrhe--Volume 1" by François Rabelais. The passage discusses themes of love, despair, and religious devotion, which are characteristic of Rabelais's work. The mention of characters like Lothario and Antonia, along with the overall style and content, clearly indicate this book.
+----------------------------------------
+
+--- Question 7/20 ---
+Model Answer:    B
+Correct Answer:  A
+Actual Title:    midi à quatorze heures histoire d'un voisin--voyage dans paris--une visite à l'arsenal--un homme et une femme
+Explanation:     This text snippet is from "Cœur de pirate" (Heart of a Pirate in English), which is a novel by Alexandre Dumas. The passage discusses social class and fashion in 19th-century France, reflecting themes common in Dumas's works.
+----------------------------------------
+
+--- Question 8/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    cent-vingt jours de service actif
+Explanation:     The text snippet is in French and discusses military details, including a company's composition and its departure from a fort. This content aligns with the style and subject matter found in "Cent-Vingt Jours de Service Actif," a book that documents the experiences of Canadian soldiers during their service.
+----------------------------------------
+
+--- Question 9/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    correspondance, vol. 5, 1812-1876
+Explanation:     The text snippet is from "Correspondance, Vol. 5, 1812-1876" by George Sand. This can be deduced from the signature at the end of the letter, "Nohant, 29 juillet 1867," and the style of writing, which is characteristic of George Sand's correspondence.
+----------------------------------------
+
+--- Question 10/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    cours de philosophie positive. (3/6)
+Explanation:     This text snippet is from "Cours de Philosophie Positive" by Auguste Comte. The style and content, discussing the limitations of biological sciences compared to other branches of philosophy, are characteristic of Comte's work.
+----------------------------------------
+
+--- Question 11/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    l'illustration, no. 3255, 15 juillet 1905
+Explanation:     The text snippet is from an issue of "L'Illustration," a French illustrated newspaper, dated July 15, 1905. It discusses the disaster of the submarine "Farfadet" and includes several illustrations and notes about literary works, indicating it is part of the magazine's content rather than a standalone book.
+----------------------------------------
+
+--- Question 12/20 ---
+Model Answer:    A
+Correct Answer:  D
+Actual Title:    les quarante-cinq tome 3
+Explanation:     The text snippet is from "L'Assommoir" by Émile Zola. It describes the character Aurilly's actions and thoughts as he tries to eavesdrop on others while walking through a street. The style and content are consistent with Zola's naturalistic literary approach, which focuses on the gritty realities of working-class life in late 19th-century France.
+----------------------------------------
+
+--- Question 13/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    cœur-de-panthère
+Explanation:     The text snippet is from "Cœur-de-Panthère" by Pierre Loti. It describes a scene where Jack returns safely to Fort Laramie and the preparations for an expedition to avenge the "Heroine of Fort Laramie." The mention of specific military details and the context of the story align with the narrative style and content of this novel.
+----------------------------------------
+
+--- Question 14/20 ---
+Model Answer:    B
+Correct Answer:  C
+Actual Title:    contes rapides
+Explanation:     This text snippet is from "Les Quarante-Cinq" by Honoré de Balzac, specifically from the third volume. The passage describes a relationship between a teacher and her student, Marius, and their correspondence through letters filled with romantic sentiments. Balzac's work often delves into the complexities of human relationships and societal norms, which aligns with the content of this excerpt.
+----------------------------------------
+
+--- Question 15/20 ---
+Model Answer:    B
+Correct Answer:  D
+Actual Title:    la clique dorée
+Explanation:     The text snippet is from "Sodome et Gomorrhe--Volume 1," a novel by François-René de Chateaubriand. It describes the thoughts and possessions of a character named Mlle de la Ville-Handry, who is in a difficult situation and is assessing her resources. This context and style are characteristic of Chateaubriand's work.
+----------------------------------------
+
+--- Question 16/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    mémoires du maréchal marmont, duc de raguse (1/9)
+Explanation:     The text snippet is from "Mémoires du maréchal Marmont, duc de Raguse," which is a historical memoir written by Marshal Louis-Nicolas Davout, Duke of Ragusa. The content discusses military strategies and actions during a campaign, which aligns with the style and subject matter of this memoir.
+----------------------------------------
+
+--- Question 17/20 ---
+Model Answer:    C
+Correct Answer:  B
+Actual Title:    a propos de l'assommoir
+Explanation:     This text snippet is from "L'Illustration," No. 3255, dated 15 July 1905. It discusses a writer named M. Ulbach and his works, providing critical analysis typical of journalistic reviews during that period. The style and content suggest it is a review or commentary piece from a French newspaper or magazine.
+----------------------------------------
+
+--- Question 18/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    histoire du canal de suez
+Explanation:     The text snippet discusses the formation of the Suez Canal Company and includes phrases like "Compagnie," "Conseil d’administration," and "territoires," indicating it is from "Histoire du canal de Suez."
+----------------------------------------
+
+--- Question 19/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    oeuvres complètes de gustave flaubert, tome 4
+Explanation:     The text snippet is from "Œuvres complètes de Gustave Flaubert, tome 4," which contains the short story "Un Coeur simple." The dialogue and characters mentioned, such as Martinon and M. Dambreuse, along with the political references to the French Revolution and various political figures, are characteristic of Flaubert's style and content.
+----------------------------------------
+
+--- Question 20/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    oeuvres de marcel schwob volume 1 of 2
+Explanation:     The text snippet is from "Oeuvres de Marcel Schwob, Volume 1 of 2." It contains French literary content with references to characters and themes that are characteristic of Marcel Schwob's works, including religious and allegorical elements.
+----------------------------------------
+
+\subsection{Appendix D: book\_reasoning\_german.txt}
+--- Question 1/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    ferdinand lassalle eine würdigung des lehrers und kämpfers
+Explanation:     The text snippet discusses concepts related to bourgeois revolution, modern state systems, and taxation, which are themes found in Ferdinand Lassalle's works. The specific mention of Lassalle and his theories about the bourgeois state and indirect taxation clearly indicates that this excerpt is from "Ferdinand Lassalle: Eine Würdigung des Lehrers und Kampfers," making option A the correct choice.
+----------------------------------------
+
+--- Question 2/20 ---
+Model Answer:    C
+Correct Answer:  D
+Actual Title:    das stunden-buch
+Explanation:     The text snippet is from "Die Stufe - Fragment einer Liebe" by Gerhart Hauptmann. It reflects the themes of transformation and rebirth, as well as the imagery of nature and society regaining its natural state, which are characteristic of Hauptmann's work.
+----------------------------------------
+
+--- Question 3/20 ---
+Model Answer:    C
+Correct Answer:  A
+Actual Title:    die stufe fragment einer liebe
+Explanation:     The text snippet is from "Faust: Der Tragödie Erster Teil" by Johann Wolfgang von Goethe. It contains characteristic German Romantic language and themes that are typical of Goethe's work, such as the discussion of art, beauty, and nature. The mention of Spitzbergen and the overall poetic style align with Faust's philosophical musings.
+----------------------------------------
+
+--- Question 4/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    menschliches, allzumenschliches
+Explanation:     The text snippet is from "Menschliches, Allzumenschliches" (Human, All Too Human) by Friedrich Nietzsche. It discusses the transition from a more harmonious and traditional artistic approach to the modern restless and revolutionary spirit of the time. This philosophical work fits the content and style of the given passage.
+----------------------------------------
+
+--- Question 5/20 ---
+Model Answer:    D
+Correct Answer:  C
+Actual Title:    märchen-almanach auf das jahr 1828
+Explanation:     The text snippet is from "Das Schönste" by Max Dauthendey, a German author known for his adventure stories. The passage describes a scene of combat involving swords and a character named Said fighting against robbers, which fits the adventurous and heroic tone typical of Dauthendey's works.
+----------------------------------------
+
+--- Question 6/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    mr honey's banking dictionary (english-german)
+Explanation:     The text snippet appears to be a list of legal terms translated from English to German, making it most likely part of a bilingual dictionary focused on legal terminology. Option A, "mr honey's banking dictionary (english-german)," fits this description as it is a bilingual dictionary and includes various legal terms related to law and legal procedures.
+----------------------------------------
+
+--- Question 7/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    geschichte von england seit der thronbesteigung jakob's des zweiten. siebenter band: enthaltend kapitel 13 und 14.
+Explanation:     The text snippet is from "Geschichte von England seit der Thronbesteigung Jakob's des Zweiten. Siebenter Band: Enthaltend Kapitel 13 und 14." This can be inferred from the footnote references and the content discussing historical events in Scotland during the late 17th century, including mentions of Sir Ewan Cameron, the Siege of the Castle of Edinburgh, and parliamentary acts.
+----------------------------------------
+
+--- Question 8/20 ---
+Model Answer:    A
+Correct Answer:  B
+Actual Title:    kater martinchen
+Explanation:     The text snippet is from "das stunden-buch," a collection of fairy tales and folk stories. It mentions characters and elements typical of German folklore, such as the Matthes Pagels and his tree, and introduces the Rattenkönig Birlibi, which are part of the stories in this book.
+----------------------------------------
+
+--- Question 9/20 ---
+Model Answer:    C
+Correct Answer:  D
+Actual Title:    der gastfreund
+Explanation:     The text snippet is in German and appears to be from a play about Medea, a character from Greek mythology. The dialogue includes references to Peronto, Aietes, and mentions of Delphi and Colchis, which are locations from Greek mythology. This content aligns with the study of Greek antiquity, making "griechische altertumskunde" (Greek antiquity) the most appropriate choice among the given options.
+----------------------------------------
+
+--- Question 10/20 ---
+Model Answer:    B	
+Correct Answer:  B
+Actual Title:    cuba
+Explanation:     The text snippet describes the mangrove swamps and wetlands of Cuba, specifically mentioning the region from Manzanillo to Tunas. It discusses the wildlife and the unsuitability of the area for settlement by agricultural people. This content is characteristic of travelogues or geographical descriptions, fitting well with "Cuba" as one of the options provided.
+----------------------------------------
+
+--- Question 11/20 ---
+Model Answer:    C
+Correct Answer:  C
+Actual Title:    weltreise erster teil: indien, china und japan
+Explanation:     The text snippet describes the approach to Hong Kong and mentions geographical features such as islands, cliffs, and the Pearl River. This content aligns with a travelogue or guidebook about traveling to China, specifically focusing on the region around Hong Kong. "Weltreise Erster Teil: Indien, China Und Japan" (First Part of World Travel: India, China, and Japan) fits this description as it would contain detailed information about various locations in these countries.
+----------------------------------------
+
+--- Question 12/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    ... und hätte der liebe nicht weihnächtliche geschichten
+Explanation:     The text snippet is in German and discusses a woman named Frau Heilemann who promises to come back to visit Laura and her family. She mentions giving gifts to the child on Christmas Eve, which is a common theme in Christmas stories. This content aligns with option B, "... und hätte der liebe nicht weihnächtliche geschichten," which translates to "And if love had not written Christmas stories." This title suggests a collection of Christmas-themed stories, making it the most likely source for the given text.
+----------------------------------------
+
+--- Question 13/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    griechische altertumskunde
+Explanation:     The text snippet is in German and discusses ancient Greek naval history, mentioning locations such as Akte, Munychia, and the Peiraieus. This content aligns with the study of Greek antiquity, making "griechische altertumskunde" (Greek Antiquities) the most appropriate choice among the given options.
+----------------------------------------
+
+--- Question 14/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    faust: der tragödie erster teil
+Explanation:     The text snippet is clearly from "Faust: Der Tragödie Erster Teil" by Johann Wolfgang von Goethe. It includes dialogue between characters such as Faust, Mephistopheles, and the Witch, which are central to the narrative of this famous German literary work.
+----------------------------------------
+
+--- Question 15/20 ---
+Model Answer:    C
+Correct Answer:  A
+Actual Title:    boccaccio
+Explanation:     The text snippet is from "Das Stunden-Buch," a collection of novellas that reflect real-life situations and human experiences. It discusses the natural order of life and societal norms, which aligns with the themes found in "Das Stunden-Buch" by Johann Peter Hebel.
+----------------------------------------
+
+--- Question 16/20 ---
+Model Answer:    A
+Correct Answer:  A
+Actual Title:    das schönste von max dauthendey
+Explanation:     The text snippet is from "das schönste" by Max Dauthendey. It describes a character who has become aware of the continuous cycle of murder and the presence of all murderers throughout history, indicating a dark and psychological narrative typical of Dauthendey's works.
+----------------------------------------
+
+--- Question 17/20 ---
+Model Answer:    B
+Correct Answer:  B
+Actual Title:    die entstehung der kontinente und ozeane
+Explanation:     The text snippet discusses geological formations and their alignment, suggesting it is from "Die Entstehung der Kontinente und Ozeane" by Alfred Wegener, where he presents evidence for continental drift theory.
+----------------------------------------
+
+--- Question 18/20 ---
+Model Answer:    A
+Correct Answer:  D
+Actual Title:    der kriegsfreiwillige
+Explanation:     The text snippet is from "das schönste von max dauthendey," a German children's novel. It describes a scene in a church service where the congregation prays for freedom and celebrates after the service with their children, who have been away. The style and content are characteristic of the narrative and themes found in this particular book.
+----------------------------------------
+
+--- Question 19/20 ---
+Model Answer:    D
+Correct Answer:  C
+Actual Title:    a book of german lyrics
+Explanation:     This text snippet discusses the life and works of Friedrich Schiller, a prominent German poet and playwright. It mentions his career progression and his struggles with health, which aligns with the biographical nature of "Der Gastfreund" (The Guest-Friend), a novel by Theodor Fontane that includes biographical elements about its characters.
+----------------------------------------
+
+--- Question 20/20 ---
+Model Answer:    D
+Correct Answer:  D
+Actual Title:    polnische gedichte
+Explanation:     The text snippet is in German and discusses themes related to Polish identity, borders, and the relationship between different ethnic groups. Given the content and language, it is most likely from a collection of Polish poetry (Polnische Gedichte), making option D the correct choice.
+----------------------------------------
+
+
+\enddocument
+\end{document}}
