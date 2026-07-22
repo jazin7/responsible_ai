@@ -169,101 +169,25 @@ literature best in English. Therefore to judge the accuracy of the model in othe
     \label{fig:language_chart}
 \end{figure}
 
-Comparing the different languages now shows a significant difference in the models accuracy to predict titles from german, french and italian literature. Figure \ref{fig:language_chart} illustrates the zero-shot evaluation results. While none of the results appear to be especially bad, there is a visible gap between them and the english accuracy. Dutch scored higher than we expected. As Italian and Dutch are the two smallest of the datasets we chose, italian having 1010 books included and dutch 1420, this may be an interesting find of smaller booksets maybe being better stored in the models and easier to reproduce. Another possible interpretation could be that the books from this languages are more famous ones. While in Project Guttenberg all kinds of books can be saved this means that for english literature also very niche texts are stored. For less represented languages this could instead leading to only being represented by their most famous literature. 
+Comparing the different languages now shows a significant difference in the models accuracy to predict titles from german, french and italian literature. Figure \ref{fig:language_chart} illustrates the zero-shot evaluation results. While none of the results appear to be especially bad, there is a visible gap between them and the english accuracy. Dutch scored higher than we expected. As Italian and Dutch are the two smallest of the datasets we chose, italian having 1010 books included and dutch 1420, this may be an interesting find of smaller booksets maybe being better stored in the models and easier to reproduce. Another possible interpretation could be that the books from this languages are more famous ones. While in Project Gutenberg all kinds of books can be saved this means that for english literature also very niche texts are stored. For less represented languages this could instead leading to only being represented by their most famous literature. 
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/German_trans.png} 
+    \caption{Distribution of predictions, for german text -> english titles}
+    \label{fig:language_chart}
+\end{figure}
+Comparing accuracy of german text parts with their original english titles, shows an accuracy that is significantly higher than the corresponding german literature. This finding suggests that english literature is far more known in any language than other original literature. The model can link German text to an English title when the book is well known, which fits the finding of Chang et al. \cite{chang2023}. Famous books have many copies on the web in several languages so the model had many opportunities to learn the link during training. 
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/noise.png} 
+    \caption{Introducing noise}
+    \label{fig:noise-chart}
+\end{figure}
+The noise run presents an interesting find, seen in Figure \ref{fig:noise-chart}. For this evaluation the accuracy of each language was tested with noise levels being raised in 5\% steps (0\%, 5\%, 10\%, etc...). While it is not surprising, that english remained to have the highest accuracy rate, it is the only one that does not at any point falls to around 25\% where the results are equally as good as guessing. Instead the results suggest that english literatuer is acutally still recognized with a 50\% chance, when almost half of the characters were misplaced. All other languages follow a relatively similar decline in accuracy, with all of them falling below 50\% accuracy at 25\% text corruption. French is a bit earlier at this, but this can be attributed to the samples being random books which can lead to slight fluctuations in the results. Also interesting is that the accuracy in dutch had a steep decline, despite dutch being quite similar to english in the beginning it has a similar accuracy with the other languages when being corrupted. This supports our theory that for the smaller dataset the model is better capable of just reproducing exact text passages, which gives the model difficulties when the text is slightly altered.  
+A reason for some of the results we got, can be found, when analyzing the reasoning of the model behind some title decisions. A minor note at this is that we found a larger error rate in the model when the model was asked to explain its decision. When analyzing reasoning of the models (answers found in the Appendix), we found that two points influenced the models decision at most. One of them were certain characters that the model mapped to certain books. An example is the following quote from the explanations: "The text snippet is in German and appears to be from a play about Medea, a character from Greek mythology. The dialogue includes references to Peronto, Aietes, and mentions of Delphi and Colchis, which are locations from Greek mythology. This content aligns with the study of Greek antiquity, making "griechische altertumskunde" (Greek antiquity) the most appropriate choice among the given options." Here the actual book would have been \textit{Der Gastfreund} a book that plays in the ancient Kochis and mentions the Argonauts, but because of these well known characters the model is confused which book this could be, as it assosciates these characters with a limited number of works, here specifically ancient greek tales. This lets us assume that the model is not capable of actually reproducing or remembering text passages it encountered during training. Instead it associates certain books with certain traits, like characters and biggest part we found in our analysis: style. When asked to explain itself, the model almost always argumented with the style of a book fitting to a certain book. This implies the model learns during training to associate different writing styles with certain authors or certain works. Certainly this means the model reducing its accuracy for less known books, which styles maybe get interpreted as a better well known book, with a similar style, as writing style is something that is hard to define directly. For example in the (wrong) reasoning for the book \textit{midi à quatorze heures histoire d'un voisin--voyage dans paris--une visite à l'arsenal--un homme et une femme} the model argues, that: "The passage discusses social class and fashion in 19th-century France, reflecting themes common in Dumas's works." Therefore it argues the book is surely by Alexander Dumas, which is wrong as it is by Alphonse Karr. While he is not an unknown author, he is less known as Alexander Dumas, which seems his writing to be wrongly attributed to Dumas. This forgetting of \textit{smaller} authors matters regarding fairness. As we already stated, this probably comes from a frequency bias, where well known authors are better represented in the trainings data. With merging different works under one larger, well known author, literature history is forgotten by these models. It can also lead to the reinforcement of biases, as smaller authors, will be forgotten, hiding more hidden history, under the general well-known one. It also should caution to using LLMs in literary history analysis, as this findings indicate that models are not good at analyzing style movements and similar, because historical writing styles were often influenced by place and time. The fact that the error rate increases, indicates that during the reasoning the model actually gets caught up itself in its generalizing assumptions. These results are a caution towards digital humanities, and using LLMs when discovering literary and cultural history. 
 
-\section{Results}
-
-Table~\ref{tab:results} reports the outcome of all runs. Every base run stays
-well above the 25\% guess line. English is the strongest set with 88 of 100
-books, followed by Dutch with 83. German and French sit close together at 72
-and 71, and Italian is the weakest at 66.
-
-\begin{table}[H]
-\centering
-\small
-\begin{tabular}{lrrr}
-\toprule
-Test set & Books & Correct & Accuracy \\
-\midrule
-English & 100 & 88 & 88.0\% \\
-Dutch & 100 & 83 & 83.0\% \\
-German & 100 & 72 & 72.0\% \\
-French & 100 & 71 & 71.0\% \\
-Italian & 100 & 66 & 66.0\% \\
-\midrule
-German text, English titles & 23 & 22 & 95.7\% \\
-German with 50\% noise & 20 & 6 & 30.0\% \\
-English with explanations & 10 & 5 & 50.0\% \\
-\bottomrule
-\end{tabular}
-\caption{Accuracy of Qwen2.5-7B-Instruct on all runs. Random guessing gives
-25\%.}
-\label{tab:results}
-\end{table}
-
-The translation run reached 22 of 23 books. The model read German text and
-still selected the correct English original title in almost every case.
-
-The noise run fell sharply. Without noise the German base run stands at 72\%,
-but once half of the characters are replaced the model got 6 of 20 books
-right. That is 30\% against a guess line of 25\%, so at this noise level the
-recognition ability is largely gone.
-
-The explanation run reached 5 of 10 books where the base English run answered
-6 of the same 10 questions correctly. The samples are tiny, so a difference of
-one book carries little weight. The content of the explanations is more
-revealing than the score. For book 1 the model chose the right option and
-named \textit{The Tatler} as the clue in the text. For book 2 it chose a wrong
-option and wrote that the passage is clearly from \textit{The Prodigals and
-their Inheritance} because the character Mr.Probert is specific to that book.
-Mr.Probert is in fact a character in \textit{The Reverberator}, which was the
-correct answer. The model sounded equally certain in both cases.
-
-\section{Analysis}
-
-The plain reading of Table~\ref{tab:results} is that the model recognizes
-literature best in English. German scores 16 points below English and French
-17, while Italian is 22 points below. Dutch loses only 5 points, which is higher
-than we expected. Part of the reason may be a difference in filtering. The
-English and German runs removed translated books before building questions,
-whereas the French, Italian and Dutch runs kept them because the translation
-filter was not active there. A Dutch or French copy of a famous English book
-is easier to recognize than a local original so the gap for these three
-recognise is probably somewhat larger than the table suggests.
-
-The 95.7\% for German translations with English titles looks very high next to
-the 72\% for German books with German titles and we would not read too much
-into it. The set is small at 23 books and the books are famous  with Dickens,
-Twain, Wilde, Shakespeare and Carroll all present. Eleven files are volumes of
-the same history so the same correct title recurs eleven times. The passages
-for this run were also three times longer and the answer pool was small. All
-of this pushes the score upward.
- The model can link German text to an English title when the book is well known,
-which fits the finding of Chang et al. \cite{chang2023}. Famous books have
-many copies on the web in several languages so the model had many
-opportunities to learn the link during training.
-
-The noise run gives a clear picture. At 50\% random characters the score lands
-at 30\% against a guess line of 25\%. A passage in which every second
-character is random is hard for a human to read as well. A single noise level
-is of course a thin basis.
-
-The explanation run is small yet it exposes a known problem from a new angle.
-The model states wrong facts with full confidence. The Mr.Probert case
-is a good example, as the explanation picks a real detail from the
-passage and attaches it to the wrong book. A user who does not know both books
-cannot catch the error. For trustworthiness this weighs more than the raw
-accuracy numbers because a wrong letter is cheap while a wrong letter wrapped
-in a fluent and confident account can mislead a reader.
-
-Some limitations remain. Every run is a single pass so the numbers carry
-sampling luck and with 100 books a swing of a few points between repeated
-runs would be normal. The titles come from the file headers and were
-lowercased, so a few odd or broken titles may have entered the question sets.
-The three wrong titles per question are random draws, which makes some
-questions easy when the wrong titles fall far from the topic of the passage.
 
 \section{Conclusion}
 
