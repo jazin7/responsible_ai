@@ -10,6 +10,12 @@
 \usepackage{amsmath,amsfonts}
 \usepackage{xcolor}
 \usepackage{hyperref}
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  breaklines=true,
+  literate={ü}{{\"u}}1 {ö}{{\"o}}1 {ä}{{\"a}}1 {Ü}{{\"U}}1 {’}{{'}}1
+}
 
 
 \newcommand{\note}[1]{\textcolor{blue}{#1}}
@@ -364,5 +370,14 @@ Natural Language Processing (EMNLP)}, 2023. arXiv:2305.16339.
 
 
 \end{thebibliography}
+
+\appendix
+\section{CSV files}
+
+\subsection{Gutenberg\_Uebersetzungen\_Liste.csv}
+\lstinputlisting{Gutenberg_Uebersetzungen_Liste.csv}
+
+\subsection{translated\_books.csv}
+\lstinputlisting{translated_books.csv}
 
 \end{document}
