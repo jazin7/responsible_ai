@@ -1,5 +1,11 @@
 \documentclass[11pt]{article}
 
+\usepackage{csvsimple}
+\usepackage{pdflscape}  % Rotates the page for wide tables
+\usepackage{booktabs}   % Provides professional quality table lines
+\usepackage{xltabular}  % Multi-page tables with auto-wrapping columns (X)
+\usepackage{csvsimple-l3}% Reads CSV files cleanly
+\usepackage{array}         % Helps with column alignment and formatting
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{times}
@@ -12,6 +18,8 @@
 \usepackage{hyperref}
 \usepackage{todonotes}
 \usepackage{minted}
+\usepackage{pdfpages}
+
 \usemintedstyle{friendly} % Options: monokai, github, friendly, vs, etc.
 \setminted{
     fontsize=\footnotesize,
@@ -190,27 +198,23 @@ A reason for some of the results we got, can be found, when analyzing the reason
 
 
 \section{Conclusion}
-
-We built a small test around one clear question. Does a language model
-recognize books in other languages as well as it does in Enrecogniser
-Qwen2.5-7B-Instruct the answer is no. English reached 88\% while the other
-four languages landed between 66\% and 83\%. The model beats random guessing
-everywhere, so the ability does not vanish outside English but it does weaken.
-The additional runs sharpen the picture. The model links German translations
+Some limitations in our model remain. Every run is a single pass so the numbers carry sampling luck and with 100 books a swing of a few points between repeated runs would be normal. The titles come from the file headers and were lowercased, so a few odd or broken titles may have entered the question sets. The three wrong titles per question are random draws, which makes some questions easy when the wrong titles fall far from the topic of the passage. Still the results show a trend that could be further explored. As this experiment was limited by time and computing capacity. With more computing capacity the experiment could be expanded to larger and more models. Additionally with a bit of work an own database could be established, compiling more non-european centric works. We were also limited due to our own spoken languages in testing the application of titles to translated work. With more people available one could test how well models perform on english classics translated into other languages, but the mapping of the titles has to be done by hand, as it involves research into old books, as titles are not always just translations of the original one. The testing for noise could also be more finetuned, by for example strategically replacing character names with others or changing the writing style. This would lead to the creation of a handcrafted database, which could give more interesting insights. 
+Nevertheless our experiment yielded interesting results. We built a small test around one clear question. Does a language model recognize books in other languages as well as it does in english. 
+The answer to that was no. English reached a high percentage while the other four languages landed between 60\% and 80\%. The model beats random guessing everywhere, so the ability does not vanish outside English but it does weaken. We could show a noticable gap in language performance. A gap that even got larger, when done on corrupted text, which makes LLMs not well equiped for helping in digitalizing old literature outside of the english language. The model links German translations
 to their English originals when the books are famous, it breaks down when half
 of the text is random noise and its explanations sound convincing even when
-they are wrong.
+they are wrong. Interestingly, the model achieved its highest cross-lingual accuracy (95.7\%) when matching German translations to their original English titles, reinforcing prior findings on the strong web representation of famous English works. Finally, qualitative analysis of the model’s reasoning highlighted a reliance on stylistic writings and well-known author biases rather than actual textual memorization. These limitations emphasize the need for caution when deploying Large Language Models for digital humanities and non-English literary analysis. 
+
+\newpage
 
 \section*{Author contribution statement}
-Both authors contributed to the project and discussed the
-design and code implementation. Hannah Buch was the main contributor in building
-and running the experiments. Yassine Ajoud focused on the written report
-and the presentation.
+Both authors contributed to the project and discussed the design and code implementation. Hannah Buch was the main contributor in building the code and running the experiments, as well as analyzing the reasoning given by the model. Both authors contributed to writing and overworking the report. Yassine Ajoud focused on the written report and the presentation.
 
 
 \section*{GenAI use}
-DeepL was used for simple translations and for wording improvements in
-the written report.
+Copilot was used for streamlining the code and generating regular expressions, used for data extraction. DeepL and Grammarly were used for simple translations and for wording improvements in the written report.
+
+\newpage
 
 \begin{thebibliography}{9}
 
@@ -234,5 +238,10 @@ In \textit{arXiv preprint arXiv:2210.03057}, 2022.
 
 
 \end{thebibliography}
+
+\newpage
+\section{Appendix}
+\subsection{Appendix A: Mapping german/english titles}
+
 
 \end{document}
