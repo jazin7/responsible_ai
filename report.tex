@@ -1,57 +1,39 @@
-\documentclass{article}
-
-\usepackage[final]{neurips_2019}
+\documentclass[11pt]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{hyperref}
-\usepackage{url}
-\usepackage{booktabs}
-\usepackage{amsfonts}
-\usepackage{nicefrac}
-\usepackage{microtype}
+\usepackage{times}
+\usepackage[textwidth=5.5in,textheight=9in]{geometry}
 \usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{amsmath,amsfonts}
 \usepackage{xcolor}
-\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage{todonotes}
 
-\newcommand{\note}[1]{\textcolor{blue}{{#1}}}
 
-\title{
-  Accuracy of LLM on literature based language  \\
+\newcommand{\note}[1]{\textcolor{blue}{#1}}
+
+\title{\vspace{-1em}\textbf{Trustworthiness of Models based on Language}\\
   \vspace{1em}
-  \small{\normalfont Responsible AI Project Report}  % Select one and delete the other
-}
+  \normalsize{\normalfont Responsible AI Project Report}}
 
 \author{
-  Name \\
-  Hannah Buch \\
-  \AND
-  Name\\
-  Yassine Ajoud
-  % Examples of more authors
-%   \And
-%   Name \\
-%   Department of Computer Science \\
-%   Stanford University \\
-%   \texttt{name@stanford.edu} \\
-%   \And
-%   Name \\
-%   Department of Computer Science \\
-%   Stanford University \\
-%   \texttt{name@stanford.edu}
+  Hannah Buch \quad Yassine Ajoud\\
 }
+
+\date{}
 
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-This report describes the development of an evaluation framework to assess the capability of LLMs (especially Qwen) to perform literature analysis and recognization, combined with reasoning, across multiple languages. For testing the data, from a well known and well trained source literature was taken from Project Gutenberg. The program evaluates the model's capacity to process text snippets and accurately identify the corresponding book from a set of random possible titles. 
-Analyzed were english, german, french, dutch and italian literature and cross-lingual test between german and english, where german texts were matched to english titles, checking the models capability of applying translated texts. The question datasets were automatically created by using text processing for the header each book in Project Gutenberg has. 
-Additionaly the model's reasoning capabilities were tested, were we manually analyzed the models reasons for choosing certain titles. The checking of the model results were also done automatically, via regex. 
-At last we corrupted the text data, by introducing noise into them, and testing the models robustness. All of our evaluations are visualized in graphics, showing our results. 
-\end{abstract}
+This report details the development of an evaluation framework designed to assess the capability of Large Language Models (LLMs)—specifically Qwen2.5-7B-Instruct—to recognise and analyse literature across multiple languages. Using text snippets automatically extracted and processed from Project Gutenberg, we tested the model's capacity to identify the correct book title from a set of four candidates. The evaluation spanned five languages: English, German, French, Italian, and Dutch. 
 
+Beyond standard recognition, the framework incorporated several tests: cross-lingual evaluation (matching German translations to English titles to test translation application), robustness testing via noisy text, and an analysis of the model's reasoning for its choices. All results were visualised graphically. Across all variants, English consistently performed better than the other languages, indicating that the model's literary recognition capabilities are highly language-dependent, leading to weaker performance for users operating in non-English contexts.
+\end{abstract}
 
 \section{Introduction}
 The rise of Artificial Intelligence in the last years, saw especially a big development in LLMs, Large Language models. Models who were trained on large chunks of text, and capable of reproducing text, based on this trainings data. Large language models answer questions in many languages, yet most of their training data is in English. The training data mainly stems from the internet, making it in large parts english and european centric. It is therefore reasonable to ask whether they perform as well in other languages as they do in English. The question
@@ -71,35 +53,238 @@ and observed the effect on accuracy. In the third, we required the model to
 explain its answer on smaller sets of books in English, German, and French.
 
 \section{Related Work}
--
+Chang et al. investigated which books ChatGPT and GPT-4 have seen between books in and out of the copyright\cite{chang2023}. They took short passages from novels, masked a single character name and let the model fill in the missing name. When a model supplies the correct name repeatedly, it has most likely encountered the book during training. They found that the models have memorised a large number of books and that the books whose passages appear most often on the web are memorised best. Models were tested on copyrighted and free books, where especially the open books had good results. This paper implied a large background knowledge of LLMs regarding well-known literature, which was an important starting point for our testing, assuming that the model had seen the books in training. Our setup also used a similar experiment approach, but focusing on titles instead. We also extended the testing towards another model,  as most paper used ChatGPT as base model.
+Zhang et al. studied the gap between English and other languages in large language models \cite{zhang2023}. They gave the same tasks to the models in several languages and compared the results.For some tasks the correct answer stays the same after translation, while for others it depends on the language itself. On these language-dependent tasks the  models had clear difficulty once the question was no longer in English. The paper comes to the conclusion, that english functions as the models native language. Eventhough reasoning and knowledge should supposedly be independent from languages, english had consistently higher accuracies. The paper also speculates whether the models internally translate inputs into english. This would be a problem for the models in our tests, as books are usually not translated word for word, therefore this approach to literature analysis would be more complicated for the models. Also, because titles in different languages are not necessarily just translations of each other, but at times, something completely different. 
+But not all paper were critical towards the results of LLMs in different languages. Shi et al. had a more positive take on the language results, regarding multi-language reasoning\cite{shi2022}. They tested chain of thought reasoning in different languages, and hat really good results, even in languages that make up a very small percentage of the training corpus. In the end of their paper they also tested how well models could understand the sense of words across different languages, where they had better results, than previous research when applying chain of thought. But they still concluded that this is a difficult task. Something we later apply towards literature translations, as human translations usually translate the sentiment but not necessarily the words, of a text.
+Despite language tests in models being done in large quantities, there still seems to be a high dependence of the results on the task given. While training a model on given good reasoning, seemed to give good results, we now wanted to test, when the model was only trained on the texts, but not the task it was supposed to perform. Based on prior research and our own tests with the model, we performed tasks similar to the related works, but implementing different kinds of obstacles for the model, instead of a straighforward approach. 
+
 \section{Approach}
-\subsection{Database}
-For the database, we searched through Hugging Face for appropriate literature databases to use. First we wanted to use nikolina-p/gutenberg\_clean\_en\_splits\footnote{https://huggingface.co/datasets/nikolina-p/gutenberg\_clean\_en\_splits}, because the dataset had only books in english already and it had stripped all headers of the books. At first this seemed like a good approach to make sure the model would only be asked about actual text parts, and not accidentally some part of the header which did not contribute to the book itself. Unfortunatly the books in this database were only identifiable by the numbers anymore as title and similar things were contained in the header. That is why we switched to manu/project\_gutenberg\footnote{https://huggingface.co/datasets/manu/project_gutenberg/viewer/default/en}, which was the original database used by nikolina-p/gutenberg\_clean\_en\_splits. 
+\subsection{Data}
+For the database, we searched through Hugging Face for appropriate literature databases to use. First, we wanted to use nikolina-p/gutenberg\_clean\_en\_splits\footnote{https://huggingface.co/datasets/nikolina-p/gutenberg\_clean\_en\_splits}, because the dataset already contained only books in English and had stripped all book headers. At first, this seemed like a good approach to make sure the model would only be asked about actual text parts, and not accidentally some part of the header which did not contribute to the book itself. Unfortunately, the books in this database were only identifiable by the numbers anymore, as title and similar things were contained in the header. That is why we switched to manu/project\_gutenberg\footnote{https://huggingface.co/datasets/manu/project\_gutenberg/viewer/default/en}, which was the original database used by nikolina-p/gutenberg\_clean\_en\_splits. This dataset holds the raw text of Project Gutenberg books, with additional information in the header text. The dataset was streamed, so that the code reads one book at a time over the network. In the used dataset every file begins with an english header, which includes usual information, like title, author and translator, in cases were the book was translated. To have access to a large test set, regular expressions were used for automated data processing. Books without a title line are skipped, as are same titles. For the large dataset we worked with native literature of the language, therefore books who had a translator in the header were dropped. For each accepted book a passage of 1000 characters from the middle of the file was cut. Usually a page contains 350 to 500 words. Which seemed like a good amount for the input, but this also lead to approximately 3000 characters per page, with a bit of testing we found that 1000 characters were enough for decent results from the models. This balanced accuracy of the models with performance for testing, so that the code would not need too long to get results. The text snippets came from the middle of the book as a safe choice, as this avoided any headers or table of contents accidentally being in the text snippet and falsifying the results. In this way 100 books per language were collected, which seemed an appropriate amount without making the tests run too long.
+
+\subsection{Questions}
+
+Every book becomes a single multiple choice question that holds the passage
+and four titles, exactly one of which is correct. The three wrong titles are
+drawn at random from the other 99 books of the same language set. The four
+options are then shuffled and labelled A to D. Because the wrong options are
+real titles in the same language, the model can not come to  the answer by
+language alone.
+
+\subsection{Model and prompt}
+
+The model is Qwen2.5-7B-Instruct \cite{qwen2025}, an open instruction tuned
+model with 7 billion parameters that we run on a local machine through the
+transformers library. The prompt states that the task is to identify the book
+behind a passage, then presents the passage and the four options and asks for
+a single letter. We allow the model to generate at most 4 tokens with greedy
+decoding so that the answer stays short and stable. A regular expression
+extracts the first letter from A to D in the reply and when no letter is
+found the question counts as an error. Across the five base runs and the
+translation run this case never came up as every answer contained a readable
+letter.
+
+\subsection{German translations of English books}
+\label{sec:translations}
+
+This set is harder, because the passage is in German while the answer options
+are the English original titles. To get it right the model has to connect the
+content of a book across two languages.
+
+Assembling the set took two steps. A script first searched the German split
+for signs of a translation from English. It matched phrases like \textit{aus
+dem Englischen} in the opening part of the file and also flagged books that
+carry a translator entry together with an author from a list of well known
+English writers. The script wrote every hit to a CSV file, after which we
+filled in the English original titles by hand. For some hits no clear original
+could be established, so the final list holds 23 usable books, shown in
+Table~\ref{tab:books}. Eleven of the 23 files are volumes of a single work.
+ For this set the passage is 3000 characters
+long and starts 1000 characters into the file.
+
+
+
+\subsection{Noise}
+
+A further test measures how much corrupted text the model can tolerate. A
+function passes over a passage and replaces a share of its characters with
+random letters from the ASCII alphabet. At 50\% noise half of all characters
+are random. We applied this level to 20 German books with German title
+options.
+
+\subsection{Answers with explanations}
+
+In the base test the model prints a single letter and nothing else. We also
+wanted to observe how it reasons. In this variant the model must answer in a
+fixed format with the letter first and one or two sentences of explanation
+after it and the limit rises to 80 new tokens instead of 4. We ran the
+variant on the first 10 English questions.
 
 \section{Experiments}
 
+Table~\ref{tab:overview} lists all runs. Each run used the same model, the
+same greedy decoding and a single pass over its question set with no
+repetition. Every number in the next section therefore comes from one pass.
+The five base runs use 100 books per language, while the three additional runs
+are smaller.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lllll}
+\toprule
+Run & Text & Titles & Books & Snippet \\
+\midrule
+English & English & English & 100 & 1000 chars, middle \\
+German & German & German & 100 & 1000 chars, middle \\
+French & French & French & 100 & 1000 chars, middle \\
+Italian & Italian & Italian & 100 & 1000 chars, middle \\
+Dutch & Dutch & Dutch & 100 & 1000 chars, middle \\
+Translations & German & English & 23 & 3000 chars, early \\
+Noise & German & German & 20 & 1000 chars, 50\% noise \\
+Explanations & English & English & 10 & 1000 chars, middle \\
+\bottomrule
+\end{tabular}
+\caption{Overview of all runs.}
+\label{tab:overview}
+\end{table}
 
 \subsection{Results}
 
+Table~\ref{tab:results} reports the outcome of all runs. Every base run stays
+well above the 25\% guess line. English is the strongest set with 88 of 100
+books, followed by Dutch with 83. German and French sit close together at 72
+and 71, and Italian is the weakest at 66.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Test set & Books & Correct & Accuracy \\
+\midrule
+English & 100 & 88 & 88.0\% \\
+Dutch & 100 & 83 & 83.0\% \\
+German & 100 & 72 & 72.0\% \\
+French & 100 & 71 & 71.0\% \\
+Italian & 100 & 66 & 66.0\% \\
+\midrule
+German text, English titles & 23 & 22 & 95.7\% \\
+German with 50\% noise & 20 & 6 & 30.0\% \\
+English with explanations & 10 & 5 & 50.0\% \\
+\bottomrule
+\end{tabular}
+\caption{Accuracy of Qwen2.5-7B-Instruct on all runs. Random guessing gives
+25\%.}
+\label{tab:results}
+\end{table}
+
+The translation run reached 22 of 23 books. The model read German text and
+still selected the correct English original title in almost every case.
+
+The noise run fell sharply. Without noise the German base run stands at 72\%,
+but once half of the characters are replaced the model got 6 of 20 books
+right. That is 30\% against a guess line of 25\%, so at this noise level the
+recognition ability is largely gone.
+
+The explanation run reached 5 of 10 books where the base English run answered
+6 of the same 10 questions correctly. The samples are tiny, so a difference of
+one book carries little weight. The content of the explanations is more
+revealing than the score. For book 1 the model chose the right option and
+named \textit{The Tatler} as the clue in the text. For book 2 it chose a wrong
+option and wrote that the passage is clearly from \textit{The Prodigals and
+their Inheritance} because the character Mr.Probert is specific to that book.
+Mr.Probert is in fact a character in \textit{The Reverberator}, which was the
+correct answer. The model sounded equally certain in both cases.
 
 \section{Analysis}
 
+The plain reading of Table~\ref{tab:results} is that the model recognizes
+literature best in English. German scores 16 points below English and French
+17, while Italian is 22 points below. Dutch loses only 5 points, which is higher
+than we expected. Part of the reason may be a difference in filtering. The
+English and German runs removed translated books before building questions,
+whereas the French, Italian and Dutch runs kept them because the translation
+filter was not active there. A Dutch or French copy of a famous English book
+is easier to recognize than a local original so the gap for these three
+recognise is probably somewhat larger than the table suggests.
+
+The 95.7\% for German translations with English titles looks very high next to
+the 72\% for German books with German titles and we would not read too much
+into it. The set is small at 23 books and the books are famous  with Dickens,
+Twain, Wilde, Shakespeare and Carroll all present. Eleven files are volumes of
+the same history so the same correct title recurs eleven times. The passages
+for this run were also three times longer and the answer pool was small. All
+of this pushes the score upward.
+ The model can link German text to an English title when the book is well known,
+which fits the finding of Chang et al. \cite{chang2023}. Famous books have
+many copies on the web in several languages so the model had many
+opportunities to learn the link during training.
+
+The noise run gives a clear picture. At 50\% random characters the score lands
+at 30\% against a guess line of 25\%. A passage in which every second
+character is random is hard for a human to read as well. A single noise level
+is of course a thin basis.
+
+The explanation run is small yet it exposes a known problem from a new angle.
+The model states wrong facts with full confidence. The Mr.Probert case
+is a good example, as the explanation picks a real detail from the
+passage and attaches it to the wrong book. A user who does not know both books
+cannot catch the error. For trustworthiness this weighs more than the raw
+accuracy numbers because a wrong letter is cheap while a wrong letter wrapped
+in a fluent and confident account can mislead a reader.
+
+Some limitations remain. Every run is a single pass so the numbers carry
+sampling luck and with 100 books a swing of a few points between repeated
+runs would be normal. The titles come from the file headers and were
+lowercased, so a few odd or broken titles may have entered the question sets.
+The three wrong titles per question are random draws, which makes some
+questions easy when the wrong titles fall far from the topic of the passage.
 
 \section{Conclusion}
 
+We built a small test around one clear question. Does a language model
+recognize books in other languages as well as it does in Enrecogniser
+Qwen2.5-7B-Instruct the answer is no. English reached 88\% while the other
+four languages landed between 66\% and 83\%. The model beats random guessing
+everywhere, so the ability does not vanish outside English but it does weaken.
+The additional runs sharpen the picture. The model links German translations
+to their English originals when the books are famous, it breaks down when half
+of the text is random noise and its explanations sound convincing even when
+they are wrong.
 
 \section*{Author contribution statement}
+Both authors contributed to the project and discussed the
+design and code implementation. Hannah Buch was the main contributor in building
+and running the experiments. Yassine Ajoud focused on the written report
+and the presentation.
 
 
 \section*{GenAI use}
+DeepL was used for simple translations and for wording improvements in
+the written report.
 
-\bibliographystyle{acl_natbib}
-\bibliography{references}
+\begin{thebibliography}{9}
 
-\appendix
+\bibitem{chang2023}
+Kent K. Chang, Mackenzie Cramer, Sandeep Soni and David Bamman.
+Speak, Memory: An Archaeology of Books Known to ChatGPT/GPT-4.
+In \textit{Proceedings of the 2023 Conference on Empirical Methods in
+Natural Language Processing (EMNLP)}, 2023. arXiv:2305.00118.
 
-\section{Appendix}
+\bibitem{zhang2023}
+Xiang Zhang, Senyu Li, Bradley Hauer, Ning Shi and Grzegorz Kondrak.
+Don't Trust ChatGPT when Your Question is not in English: A Study of
+Multilingual Abilities and Types of LLMs.
+In \textit{Proceedings of the 2023 Conference on Empirical Methods in
+Natural Language Processing (EMNLP)}, 2023. arXiv:2305.16339.
 
+\bibitem{shi2022}
+Freda Shi, Mirac Suzgun, Markus Freitag, Xuezhi Wang, Suraj Srivats, Soroush Vosoughi, Hyung Chung, Yi Tay, Sebastian Ruder, Denny Zhou, Dipanjan Das and Jason Wei.
+Language Models are Multilingual Chain-of-Thought Reasoners.
+In \textit{arXiv preprint arXiv:2210.03057}, 2022.
+
+
+\end{thebibliography}
 
 \end{document}
-
