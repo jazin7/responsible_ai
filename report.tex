@@ -11,7 +11,30 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{todonotes}
+\usepackage{minted}
+\usemintedstyle{friendly} % Options: monokai, github, friendly, vs, etc.
+\setminted{
+    fontsize=\footnotesize,
+    baselinestretch=1.1,
+    linenos=true,
+    frame=single,
+    breaklines=true
+}
 
+\usepackage{tcolorbox}
+
+% Define custom styles for prompts
+\tcbuselibrary{skins, breakable}
+\newtcolorbox{promptbox}[1]{
+  colback=gray!8!white,
+  colframe=gray!60!black,
+  fonttitle=\bfseries,
+  title=#1,
+  arc=1mm,
+  boxrule=0.5pt,
+  left=2mm, right=2mm, top=2mm, bottom=2mm,
+  breakable % Allows prompt to split across pages if very long
+}
 
 \newcommand{\note}[1]{\textcolor{blue}{#1}}
 
@@ -57,15 +80,15 @@ Chang et al. investigated which books ChatGPT and GPT-4 have seen between books 
 Zhang et al. studied the gap between English and other languages in large language models \cite{zhang2023}. They gave the same tasks to the models in several languages and compared the results.For some tasks the correct answer stays the same after translation, while for others it depends on the language itself. On these language-dependent tasks the  models had clear difficulty once the question was no longer in English. The paper comes to the conclusion, that english functions as the models native language. Eventhough reasoning and knowledge should supposedly be independent from languages, english had consistently higher accuracies. The paper also speculates whether the models internally translate inputs into english. This would be a problem for the models in our tests, as books are usually not translated word for word, therefore this approach to literature analysis would be more complicated for the models. Also, because titles in different languages are not necessarily just translations of each other, but at times, something completely different. 
 But not all paper were critical towards the results of LLMs in different languages. Shi et al. had a more positive take on the language results, regarding multi-language reasoning\cite{shi2022}. They tested chain of thought reasoning in different languages, and hat really good results, even in languages that make up a very small percentage of the training corpus. In the end of their paper they also tested how well models could understand the sense of words across different languages, where they had better results, than previous research when applying chain of thought. But they still concluded that this is a difficult task. Something we later apply towards literature translations, as human translations usually translate the sentiment but not necessarily the words, of a text.
 Despite language tests in models being done in large quantities, there still seems to be a high dependence of the results on the task given. While training a model on given good reasoning, seemed to give good results, we now wanted to test, when the model was only trained on the texts, but not the task it was supposed to perform. Based on prior research and our own tests with the model, we performed tasks similar to the related works, but implementing different kinds of obstacles for the model, instead of a straighforward approach. 
+
 \section{Approach}
-\subsection{Question and Goals}
+\subsection{Reasearch Question and Goals}
 The primary objective we intended to investigate was: How accurate are LLMs at performing zero-shot literary identification when input and output are supposed to be different languages. While models show strong performance in one singular language, we wanted to extend this testing to cross-lingual. While working on this we developed an additional question.  How resilient are LLMs capabilites when tasked with identifying corrupted literary text? Old digitized archives, but also old grammar or regional dialects, can lead to errors or intentional differences in text, which possibly hinder the recognition process. Therefore we tried to classify how much corruption still yields acceptable results. 
 To answer this questions we built an automated benchmarking pipeline, using data streamed from Project Gutenberg. The results are visualized via graphs for later analysis. To ensure reproducibility and interactive execution we wrote the program into a Jupyter Notebook, which not only made the graphics easier to display but also enables smaller checks, without running the whole program. 
 
 \subsection{Model and Database}
 For the database, we searched through Hugging Face for appropriate literature databases to use. First, we wanted to use nikolina-p/gutenberg\_clean\_en\_splits\footnote{https://huggingface.co/datasets/nikolina-p/gutenberg\_clean\_en\_splits}, because the dataset already contained only books in English and had stripped all book headers. At first, this seemed like a good approach to make sure the model would only be asked about actual text parts, and not accidentally some part of the header which did not contribute to the book itself. Unfortunately, the books in this database were only identifiable by the numbers anymore, as title and similar things were contained in the header. That is why we switched to manu/project\_gutenberg\footnote{https://huggingface.co/datasets/manu/project\_gutenberg/viewer/default/en}, which was the original database used by nikolina-p/gutenberg\_clean\_en\_splits. This dataset holds the raw text of Project Gutenberg books, with additional information in the header text. The dataset was streamed, so that the code reads one book at a time over the network.
 The model is Qwen2.5-7B-Instruct \cite{qwen2025}, an open instruction tuned model with 7 billion parameters that we run on a local machine through the transformers library. It was especially chosen for its known good performance, and its size of parameters. This size of model is still reasonable to execute on a local computer. 
-
 
 \section{Experiment}
 \subsection{Data Preprocessing}
@@ -77,37 +100,59 @@ Our program starts by implementing the key methods later used to test accuracy. 
 
 Additional to the title, a text snippet was extracted from the middle of the book. By starting from the half of the text, we ensured that no header was cut out. Having header information in the input prompt would have falsified the results. 
 This strategy was used to create the whole base for question creation, except for the cross-lingual part. For this an additional method was created. The approach is similar to the base code, but instead of searching for books with no translator we specifically searched for german books that were translated from the english language. A script first searched the German split for signs of a translation from English. It matched phrases like \textit{aus dem Englischen} in the opening part of the file and also flagged books that carry a translator entry together with an author from a list of well known English writers. The script wrote every hit to a CSV file, after which we filled in the English original titles by hand. For some hits no clear original could be established, so the final list holds 23 usable books, the final table is compiled in the Appendix. The english titles were then loaded in, and used for the next step, of creating the questions for evaluation. 
+For the last part of our analysis we also built a noise generating function. This takes a percentage of noise, that is supposed to be added to the text. The percentage gives how many of the characters of the text are replaced by random characters. The noisy text is than returned to be used as a text snippet.
+\begin{minted}{python}
+    text_chars[idx] = random.choice(random_pool)
+\end{minted}
 
+\subsection{Evaluation Method}
+To test the accuracy of the model every book becomes a single multiple choice question that holds the passage and four titles, exactly one of which is correct. The three wrong titles are drawn at random from the other 99 books of the same language set. The four options are then shuffled and labelled A to D. Because the wrong options are real titles in the same language, the model can not come to  the answer by language alone. The prompt states that the task is to identify the book behind a passage, then presents the passage and the four options and asks for a single letter. We allow the model to generate at most 4 tokens with greedy decoding so that the answer stays short and stable. A regular expression extracts the first letter from A to D in the reply and when no letter is found the question counts as an error. Across the five base runs and the translation run, this case never came up, as every answer contained a readable letter. By testing with multiple choice answers we ensure test robustness, avoiding clean-up of the answer to avoid minor formatting differences. Additionally we do not have to use much tokens, and the text generation works much faster. 
 
----
-Table~\ref{tab:overview} lists all runs. Each run used the same model, the
-same greedy decoding and a single pass over its question set with no
-repetition. Every number in the next section therefore comes from one pass.
-The five base runs use 100 books per language, while the three additional runs
-are smaller.
-
-\begin{table}[H]
-\centering
+\begin{promptbox}{Prompt Template}
 \small
-\begin{tabular}{lllll}
-\toprule
-Run & Text & Titles & Books & Snippet \\
-\midrule
-English & English & English & 100 & 1000 chars, middle \\
-German & German & German & 100 & 1000 chars, middle \\
-French & French & French & 100 & 1000 chars, middle \\
-Italian & Italian & Italian & 100 & 1000 chars, middle \\
-Dutch & Dutch & Dutch & 100 & 1000 chars, middle \\
-Translations & German & English & 23 & 3000 chars, early \\
-Noise & German & German & 20 & 1000 chars, 50\% noise \\
-Explanations & English & English & 10 & 1000 chars, middle \\
-\bottomrule
-\end{tabular}
-\caption{Overview of all runs.}
-\label{tab:overview}
-\end{table}
+\vspace{0.5em}
+\textbf{User Prompt:} \\
+\texttt{You are a helpful literature assistant.}\\
+\texttt{Your task is to identify to which book a text snippet belongs to.}\\
+\texttt{Respond only (!) with the single letter choice (A, B, C or D), corresponding to the correct book.}\\
+\texttt{Do not output anything else.}\\
+\texttt{"""}\\
+\texttt{\{text\_snippet\}}\\
+\texttt{"""}\\
+\texttt{Which book is this snippet from?}\\
+\texttt{A) Title A}\\
+\texttt{B) Title B}\\
+\texttt{C) Title C}\\
+\texttt{D) Title D}\\
+\texttt{Answer (A/B/C/D):}
+\end{promptbox}
 
-\subsection{Results}
+In the base test the model prints a single letter and nothing else. We also wanted to observe how it reasons. In this variant the model must answer in a fixed format with the letter first and three or four sentences of explanation after it and the limit rises to 200 new tokens instead of 4. 
+
+\begin{promptbox}{Prompt Template (with Explanation)}
+\small
+\vspace{0.5em}
+\textbf{User Prompt:} \\
+\texttt{You are a helpful literature assistant. Your task is to identify to which book a text snippet belongs to.}\\
+\texttt{Structure your response exactly like this. Do NOT use any other formatting:}\\
+\texttt{Answer: [Single answer choice: A, B, C or D]}\\
+\texttt{Explanation: [A detailed 3-4 sentence explanation]}\\
+\vspace{0.5em}
+\texttt{Text Snippet:}\\
+\texttt{"""}\\
+\texttt{\{text\_snippet\}}\\
+\texttt{"""}\\
+\vspace{0.5em}
+\texttt{Which book is this snippet from?}\\
+\texttt{A) Title A}\\
+\texttt{B) Title B}\\
+\texttt{C) Title C}\\
+\texttt{D) Title D}\\
+\vspace{0.5em}
+\texttt{Provide your answer using the correct format.}
+\end{promptbox}
+
+\section{Results}
 
 Table~\ref{tab:results} reports the outcome of all runs. Every base run stays
 well above the 25\% guess line. English is the strongest set with 88 of 100
