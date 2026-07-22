@@ -66,8 +66,20 @@ To answer this questions we built an automated benchmarking pipeline, using data
 For the database, we searched through Hugging Face for appropriate literature databases to use. First, we wanted to use nikolina-p/gutenberg\_clean\_en\_splits\footnote{https://huggingface.co/datasets/nikolina-p/gutenberg\_clean\_en\_splits}, because the dataset already contained only books in English and had stripped all book headers. At first, this seemed like a good approach to make sure the model would only be asked about actual text parts, and not accidentally some part of the header which did not contribute to the book itself. Unfortunately, the books in this database were only identifiable by the numbers anymore, as title and similar things were contained in the header. That is why we switched to manu/project\_gutenberg\footnote{https://huggingface.co/datasets/manu/project\_gutenberg/viewer/default/en}, which was the original database used by nikolina-p/gutenberg\_clean\_en\_splits. This dataset holds the raw text of Project Gutenberg books, with additional information in the header text. The dataset was streamed, so that the code reads one book at a time over the network.
 The model is Qwen2.5-7B-Instruct \cite{qwen2025}, an open instruction tuned model with 7 billion parameters that we run on a local machine through the transformers library. It was especially chosen for its known good performance, and its size of parameters. This size of model is still reasonable to execute on a local computer. 
 
-\section{Experiments}
 
+\section{Experiment}
+\subsection{Data Preprocessing}
+Our program starts by implementing the key methods later used to test accuracy. These methods aim to be highly reusable, so as little work as possible will later be necessary during the actual experimentation. For this we state some variables in the beginning, which will be relevant for the rest of the experiment. These are especially taking 100 books per language and cutting a 1000 character long text snippet from the book. Both variables can be changed for more detailed research, but we chose them for a reasonable performance of our program, as larger numbers could possibly lead to better results, but also exceed our computing capacity. For preprocessing the books, we developed the method \textit{load\_books}, which took the target language as input and automated the rest of the loading process. In this method, we worked especially with regular expressions to extract the text passages and relevant informations about the book. These were especially extracting titles, via the search for the keyword \textit{Title} and checking whether a book was a translation by checking for a Translator. 
+
+\begin{minted}{python}
+    translator_match = re.search(r"Translator:\s*(.*)", text, re.IGNORECASE)
+\end{minted}
+
+Additional to the title, a text snippet was extracted from the middle of the book. By starting from the half of the text, we ensured that no header was cut out. Having header information in the input prompt would have falsified the results. 
+This strategy was used to create the whole base for question creation, except for the cross-lingual part. For this an additional method was created. The approach is similar to the base code, but instead of searching for books with no translator we specifically searched for german books that were translated from the english language. A script first searched the German split for signs of a translation from English. It matched phrases like \textit{aus dem Englischen} in the opening part of the file and also flagged books that carry a translator entry together with an author from a list of well known English writers. The script wrote every hit to a CSV file, after which we filled in the English original titles by hand. For some hits no clear original could be established, so the final list holds 23 usable books, the final table is compiled in the Appendix. The english titles were then loaded in, and used for the next step, of creating the questions for evaluation. 
+
+
+---
 Table~\ref{tab:overview} lists all runs. Each run used the same model, the
 same greedy decoding and a single pass over its question set with no
 repetition. Every number in the next section therefore comes from one pass.
